@@ -1,8 +1,8 @@
-Mon Oct 31 18:41:14 CET 2016 : Apache Derby Network Server - 10.10.2.0 - (1582446) started and ready to accept connections on port 1527
+Mon Oct 31 19:52:03 CET 2016 : Apache Derby Network Server - 10.10.2.0 - (1582446) started and ready to accept connections on port 1527
 ----------------------------------------------------------------
-Mon Oct 31 19:41:39 CET 2016:
-Booting Derby version The Apache Software Foundation - Apache Derby - 10.10.2.0 - (1582446): instance a816c00e-0158-1c0a-bf47-000077f732d1 
-on database directory /home/h1028320/SR/NetBeansProjects/SailAway_Web/SailAway/users with class loader sun.misc.Launcher$AppClassLoader@266474c2 
+Mon Oct 31 19:52:07 CET 2016:
+Booting Derby version The Apache Software Foundation - Apache Derby - 10.10.2.0 - (1582446): instance a816c00e-0158-1c15-8a2a-000029d051af 
+on database directory /home/h1258009/SR/NetBeansProjects/Project_Sailaway2.0/Project_Sailaway2.0/users with class loader sun.misc.Launcher$AppClassLoader@266474c2 
 Loaded from file:/opt/WR/netbeans/glassfish-4.1.1/javadb/lib/derby.jar
 java.vendor=Oracle Corporation
 java.runtime.version=1.8.0_111-b16
@@ -10,28 +10,5 @@ user.dir=/opt/WR/netbeans/glassfish-4.1.1/javadb
 os.name=Linux
 os.arch=amd64
 os.version=4.7.9-200.fc24.x86_64
-derby.system.home=/home/h1028320/SR/NetBeansProjects/SailAway_Web/SailAway
+derby.system.home=/home/h1258009/SR/NetBeansProjects/Project_Sailaway2.0/Project_Sailaway2.0
 Database Class Loader started - derby.database.classpath=''
-----------------------------------------------------------------
-Mon Oct 31 18:41:30 CET 2016:
-Shutting down instance a816c00e-0158-1bd4-b499-000077f732d1 on database directory /home/h1028320/SR/NetBeansProjects/SailAway_Web/SailAway/users with class loader sun.misc.Launcher$AppClassLoader@266474c2 
-Mon Oct 31 18:41:30 CET 2016 Thread[DRDAConnThread_2,5,main] (DATABASE = users), (DRDAID = {2}), Database 'users' shutdown.
-----------------------------------------------------------------
-Mon Oct 31 18:41:38 CET 2016:
-Booting Derby version The Apache Software Foundation - Apache Derby - 10.10.2.0 - (1582446): instance 560740aa-0158-1bd4-b499-000077f732d1 
-on database directory /home/h1028320/SR/NetBeansProjects/SailAway_Web/SailAway/users with class loader sun.misc.Launcher$AppClassLoader@266474c2 
-Loaded from file:/opt/WR/netbeans/glassfish-4.1.1/javadb/lib/derby.jar
-java.vendor=Oracle Corporation
-java.runtime.version=1.8.0_111-b16
-user.dir=/opt/WR/netbeans/glassfish-4.1.1/javadb
-os.name=Linux
-os.arch=amd64
-os.version=4.7.9-200.fc24.x86_64
-derby.system.home=/home/h1028320/SR/NetBeansProjects/SailAway_Web/SailAway
-Database Class Loader started - derby.database.classpath=''
-----------------------------------------------------------------
-Mon Oct 31 19:41:14 CET 2016: Shutting down Derby engine
-----------------------------------------------------------------
-Mon Oct 31 19:41:15 CET 2016:
-Shutting down instance 560740aa-0158-1bd4-b499-000077f732d1 on database directory /home/h1028320/SR/NetBeansProjects/SailAway_Web/SailAway/users with class loader sun.misc.Launcher$AppClassLoader@266474c2 
-----------------------------------------------------------------
