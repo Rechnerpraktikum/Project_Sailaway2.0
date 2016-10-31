@@ -17,6 +17,8 @@ import javax.servlet.ServletException;
 import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
+import java.security.*;
+import java.math.*;
         
         
 /**
@@ -57,16 +59,22 @@ public class CreateUser extends HttpServlet {
             String password = request.getParameter("password");
             
             try {
-                String query = "insert into \"USERS\""
+                MessageDigest m;
+                try {
+                    m = MessageDigest.getInstance("SHA-256");
+                    m.update(password.getBytes(),0,password.length());
+                    String pass = new BigInteger(1,m.digest()).toString(16);
+                    
+                    String query = "insert into \"USERS\""
                         + " (FIRSTNAME, LASTNAME, EMAIL, PASSWORD)"
                         + " VALUES (?,?,?,?)";
                 
-                preparedStatement = con.prepareStatement(query);
+                        preparedStatement = con.prepareStatement(query);
 
 			preparedStatement.setObject(1, firstname, java.sql.Types.VARCHAR);
 			preparedStatement.setObject(2, lastname, java.sql.Types.VARCHAR);
 			preparedStatement.setObject(3, email, java.sql.Types.VARCHAR);
-			preparedStatement.setObject(4, password, java.sql.Types.VARCHAR);
+			preparedStatement.setObject(4, pass, java.sql.Types.VARCHAR);
 
 			// execute insert SQL stetement
 			preparedStatement.executeUpdate();
@@ -76,10 +84,15 @@ public class CreateUser extends HttpServlet {
                         out.println("</head>");
                         out.println("<body>");
                         out.print("<h1>Hallo "+firstname+", dein Account wurde erfolgreich erstellt. </h1>");
-                        out.println("<a href='../'>Zurück</a>");
+                        out.println("<a href='index.xhtml'>Zurück</a>");
                         out.println("</body>");
                         out.println("</html>");
                         
+                        
+                } catch (NoSuchAlgorithmException ex) {
+                    Logger.getLogger(CreateUser.class.getName()).log(Level.SEVERE, null, ex);
+                }
+              
                 
             } catch (SQLException ex) {
                 Logger.getLogger(CreateUser.class.getName()).log(Level.SEVERE, null, ex);

@@ -6,6 +6,9 @@
 package LoginUser;
 
 import java.io.IOException;
+import java.math.BigInteger;
+import java.security.MessageDigest;
+import java.security.NoSuchAlgorithmException;
 import java.sql.Connection;
 import java.sql.DriverManager;
 import java.sql.SQLException;
@@ -57,14 +60,22 @@ public class LoginUser extends HttpServlet {
             String email = request.getParameter("email");
             String password = request.getParameter("password");
             
+            
+            MessageDigest m;
+        try {
+            m = MessageDigest.getInstance("SHA-256");
+            m.update(password.getBytes(),0,password.length());
+            String pass = new BigInteger(1,m.digest()).toString(16);
+            
+            
             try {
                 
                 String query = "select * from \"USERS\" where EMAIL = ? and PASSWORD = ?";
                 
-                preparedStatement = con.prepareStatement(query);
+                    preparedStatement = con.prepareStatement(query);
 
 			preparedStatement.setObject(1, email, java.sql.Types.VARCHAR);
-			preparedStatement.setObject(2, password, java.sql.Types.VARCHAR);
+			preparedStatement.setObject(2, pass, java.sql.Types.VARCHAR);
 
 			// execute insert SQL stetement
 			resultset = preparedStatement.executeQuery();
@@ -87,6 +98,16 @@ public class LoginUser extends HttpServlet {
             } catch (SQLException ex) {
                 Logger.getLogger(LoginUser.class.getName()).log(Level.SEVERE, null, ex);
             }
+            
+            
+        } catch (NoSuchAlgorithmException ex) {
+            Logger.getLogger(LoginUser.class.getName()).log(Level.SEVERE, null, ex);
+        }
+            
+            
+            
+            
+            
             
 
         
