@@ -4,7 +4,7 @@ body{
     text-align: center;
     background-color: #333;
     color: #fff;
-    font-weight: 1em;
+    font-weight: 400;
     font-family:Verdana, Geneva, sans-serif;
 }
 
@@ -40,7 +40,7 @@ a:link{
 }
 
 a:hover{
-    color: fff;
+    color: #fff;
     font-weight: bold;
     text-decoration: underline;
 }
