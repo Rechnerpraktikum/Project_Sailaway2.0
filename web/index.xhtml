@@ -7,21 +7,26 @@
     xmlns:ui="http://xmlns.jcp.org/jsf/facelets">
     <head>
         <title>SailAway</title>
+        <link href="http://fonts.googleapis.com/css?family=Lato:400,100" rel="stylesheet" type="text/css"/>
+        <link rel="stylesheet" href="css/standardize.css"/>
+        <link rel="stylesheet" href="css/design-grid.css"/>
         <link rel="stylesheet" type="text/css" href="css/main.css" />
     </head>
-    <body>
+    <body class="clearfix">
         <h1>Willkommen</h1>
-        <form name="login_form" action="LoginUser" method="post">
-            <input type="text" placeholder="E-Mail" name="email"/>
-            <input type="password" placeholder="Passwort" name="password"/>
-            <input type="submit" value="Login"></input>
-        </form>
+        <div>
+            <p class="text">SailAway</p>
+            <form name="login_form" action="LoginUser" method="post">
+                <input type="text" placeholder="E-Mail" name="email"/>
+                <input type="password" placeholder="Passwort" name="password"/>
+                <input type="submit" value="Login"></input>
+            </form>
         
-        <form action="addUser.xhtml" method="post" >
-        <input type="submit" value="Registrieren" />
-        </form>
+            <form action="addUser.xhtml" method="post" >
+                <input type="submit" value="Registrieren" />
+            </form>
+        </div>
         
-        <img src="img/sailaway.jpg" />
     </body>
 </html>
 
