@@ -1,13 +1,18 @@
 <?xml version='1.0' encoding='UTF-8' ?>
-<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
-<html xmlns="http://www.w3.org/1999/xhtml"
-      xmlns:h="http://xmlns.jcp.org/jsf/html">
-    <head>
-        <title>SailAway</title>
-        <link rel="stylesheet" type="text/css" href="../css/main.css" />
-    </head>
-    <body>
-        <h1>SailAway</h1>
+<!DOCTYPE html>
+<html lang="en"
+    xmlns="http://www.w3.org/1999/xhtml"
+    xmlns:f="http://xmlns.jcp.org/jsf/core"
+    xmlns:h="http://xmlns.jcp.org/jsf/html"
+    xmlns:ui="http://xmlns.jcp.org/jsf/facelets">
+    <h:head>
+        <title>Sailaway</title>
+        <link rel="stylesheet" type="text/css" href="css/main.css" />
+    </h:head>
+    <h:body>
+        <h:outputStylesheet name="css/main.css" />
+        <h1>Sailaway</h1>
+        <p>Willkommen</p>
         
         <form action="../Logout" method="post">
         <input type="submit" value="Logout" />
@@ -20,12 +25,14 @@
                 <li>WEITERE LINKS HIER EINFÜGEN</li>
             </ul>
         </div>
+        
         <div id="container">
-            Das ist der Hauptcontainer. <br></br><br></br>
-            Controlpanel kommt da rein. <br></br><br></br>
+            <!-- mit include werden  -->
+            <ui:include src="controlpanel.xhtml" />
             
-            Session wurde gesetzt dieser Bereich ist nur mit einer aktiven Session zugänglich.
         </div>
         
-    </body>
+    </h:body>
 </html>
+
+
