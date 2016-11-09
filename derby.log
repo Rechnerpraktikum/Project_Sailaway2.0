@@ -1,18 +1,18 @@
-Wed Nov 09 19:47:46 CET 2016 : Apache Derby Network Server - 10.10.2.0 - (1582446) started and ready to accept connections on port 1527
+Wed Nov 09 19:58:01 CET 2016 : Apache Derby Network Server 10.10.2.0 - (1582446) wurde gestartet und ist bereit, Verbindungen auf Port 1527 zu akzeptieren.
 ----------------------------------------------------------------
-Wed Nov 09 19:47:47 CET 2016:
-Booting Derby version The Apache Software Foundation - Apache Derby - 10.10.2.0 - (1582446): instance a816c00e-0158-4a6a-db9c-000036a166b3 
-on database directory /home/h1451855/SR/NetBeansProjects/Project_Sailaway2.0/users with class loader sun.misc.Launcher$AppClassLoader@266474c2 
-Loaded from file:/opt/WR/netbeans/glassfish-4.1.1/javadb/lib/derby.jar
+Wed Nov 09 19:58:01 CET 2016:
+Booten von Derby-Version The Apache Software Foundation - Apache Derby - 10.10.2.0 - (1582446): Instanz a816c00e-0158-4a74-3aba-fffffa374a4d
+für Datenbankverzeichnis /Users/l0pht/NetBeansProjects/Project_Sailaway2.0/users mit Class Loader sun.misc.Launcher$AppClassLoader@5451c3a8
+Geladen aus file:/Applications/NetBeans/glassfish-4.1.1/javadb/lib/derby.jar
 java.vendor=Oracle Corporation
-java.runtime.version=1.8.0_111-b16
-user.dir=/opt/WR/netbeans/glassfish-4.1.1/javadb
-os.name=Linux
-os.arch=amd64
-os.version=4.7.9-200.fc24.x86_64
-derby.system.home=/home/h1451855/SR/NetBeansProjects/Project_Sailaway2.0
-Database Class Loader started - derby.database.classpath=''
-Wed Nov 09 19:47:47 CET 2016 Thread[DRDAConnThread_2,5,main] (XID = 735), (SESSIONID = 0), (DATABASE = users), (DRDAID = {1}), Cleanup action starting
+java.runtime.version=1.8.0_101-b13
+user.dir=/Applications/NetBeans/glassfish-4.1.1/javadb
+os.name=Mac OS X
+os.arch=x86_64
+os.version=10.10.5
+derby.system.home=/Users/l0pht/NetBeansProjects/Project_Sailaway2.0
+Datenbank-Class Loader wurde gestartet - derby.database.classpath=''
+Wed Nov 09 19:58:01 CET 2016 Thread[DRDAConnThread_2,5,main] (XID = 780), (SESSIONID = 0), (DATABASE = users), (DRDAID = {1}), Cleanup action starting
 java.sql.SQLNonTransientConnectionException: Connection authentication failure occurred.  Reason: Invalid authentication..
 	at org.apache.derby.impl.jdbc.SQLExceptionFactory40.getSQLException(Unknown Source)
 	at org.apache.derby.impl.jdbc.Util.newEmbedSQLException(Unknown Source)
@@ -62,4 +62,4 @@ java.sql.SQLException: Connection authentication failure occurred.  Reason: Inva
 	at org.apache.derby.impl.drda.DRDAConnThread.run(Unknown Source)
 ============= end nested exception, level (1) ===========
 Cleanup action completed
-Wed Nov 09 19:47:47 CET 2016 Thread[DRDAConnThread_2,5,main] (DATABASE = users), (DRDAID = {1}), Connection authentication failure occurred.  Reason: Invalid authentication..
+Wed Nov 09 19:58:01 CET 2016 Thread[DRDAConnThread_2,5,main] (DATABASE = users), (DRDAID = {1}), Connection authentication failure occurred.  Reason: Invalid authentication..
