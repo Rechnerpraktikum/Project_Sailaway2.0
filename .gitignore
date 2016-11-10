@@ -3,4 +3,4 @@
 /dist/
 /users/
 derby.log
-
+*.nfs*

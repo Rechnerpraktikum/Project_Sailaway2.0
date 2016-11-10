@@ -4,3 +4,5 @@ http://stackoverflow.com/questions/3833561/why-git-doesnt-ignore-my-specified-fi
 git update-index --assume-unchanged sites/default/settings.php
 
 http://stackoverflow.com/questions/1139762/ignore-files-that-have-already-been-committed-to-a-git-repository
+
+https://gist.github.com/octocat/9257657
