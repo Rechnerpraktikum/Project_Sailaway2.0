@@ -1,0 +1,48 @@
+<!DOCTYPE HTML>
+<html>
+<head>
+<title>Ship</title>
+</head>
+<body>
+<div id="Map" style="height:400px; width:600px"></div>
+<script src="http://openlayers.org/api/OpenLayers.js"></script>
+<script>
+    var lat            = 43.828370;
+    var lon            = 15.588385;
+    var zoom           = 15;
+
+    var fromProjection = new OpenLayers.Projection("EPSG:4326");   // Transform from WGS 1984
+    var toProjection   = new OpenLayers.Projection("EPSG:900913"); // to Spherical Mercator Projection
+    var position       = new OpenLayers.LonLat(lon, lat).transform( fromProjection, toProjection);
+
+    map = new OpenLayers.Map("Map");
+    var mapnik         = new OpenLayers.Layer.OSM();
+    map.addLayer(mapnik);
+        map.setCenter(position, zoom);
+        var vectorLayer = new OpenLayers.Layer.Vector("Overlay");
+        var points =[new OpenLayers.Geometry.Point( 15.588385, 43.828370 ).transform(fromProjection, toProjection)];
+     function addPoint(lonn,latt){
+         points.push(new OpenLayers.Geometry.Point( lonn, latt ).transform(fromProjection, toProjection));
+         var feature = new OpenLayers.Feature.Vector(
+            new OpenLayers.Geometry.LineString(points)
+    );
+ 
+    
+    vectorLayer.addFeatures(feature);
+
+    map.addLayer(vectorLayer);
+     }
+
+    
+    
+    
+    
+    function setShipPosition(x, y){
+        var shipPosition = new OpenLayers.LonLat(x, y).transform( fromProjection, toProjection);
+        var markers = new OpenLayers.Layer.Markers("Markers" );
+        map.addLayer(markers);
+        markers.addMarker(new OpenLayers.Marker(shipPosition));
+    }
+</script>
+</body>
+</html>
