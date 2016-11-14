@@ -5,6 +5,8 @@
  */
 package LoginUser;
 
+import Schiff.Schiff;
+import Wetter.Wetter;
 import java.io.IOException;
 import java.math.BigInteger;
 import java.security.MessageDigest;
@@ -85,6 +87,12 @@ public class LoginUser extends HttpServlet {
                             session.setAttribute("email", email);
                             session.setAttribute("firstname", resultset.getString(1));
                             session.setAttribute("lastname", resultset.getString(2));
+                            
+                            Schiff schiff = new Schiff();
+                            Wetter wetter = new Wetter();
+                            
+                            session.setAttribute("schiff", schiff);
+                            
                             request.setAttribute("message", "Willkommen bei SailAway, ");
                             requestDispatcher.forward(request, response);
                             

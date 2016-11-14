@@ -58,6 +58,12 @@
     </welcome-file-list>
     
     
+    <listener>
+    <listener-class>
+        Schiff.Schiff
+    </listener-class>
+    </listener>
+    
     <filter>
         <filter-name>loginFilter</filter-name>
         <filter-class>LoginFilter</filter-class>
