@@ -87,11 +87,13 @@ public class LoginUser extends HttpServlet {
                             session.setAttribute("email", email);
                             session.setAttribute("firstname", resultset.getString(1));
                             session.setAttribute("lastname", resultset.getString(2));
+                            session.setAttribute("name", resultset.getString(1)+resultset.getString(2));
                             
                             Schiff schiff = new Schiff();
                             Wetter wetter = new Wetter();
                             
                             session.setAttribute("schiff", schiff);
+                            session.setAttribute("wetter", wetter);
                             
                             request.setAttribute("message", "Willkommen bei SailAway, ");
                             requestDispatcher.forward(request, response);
