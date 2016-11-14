@@ -1,6 +1,10 @@
 
-body{
-    height: 100%;
+html,body {
+    height:100%;
+    min-height: 100%;
+}
+
+#loginpages {
     margin: 0;
     text-align: center;
     font: Lato;
@@ -10,42 +14,38 @@ body{
     background-position: center center;
     color: rgb(0,39,99);
 }
-.element {
-  float: left;
-  background-color: rgb(222, 222, 222);
+.loginform {
+  display: inline-block;
+  position: absolute;
+  top: 50%;
 }
 
-.text {
+.logindiv {  
+    top: 50%;
+    left: 25%;
+    height: 30%;
+    width: 50%;
+    margin: auto;
+    position: absolute;
+}
+
+.loginputs {
+    border-radius: 15px;
+    padding: 0 10px;
+    background-color: rgb(242,242,242);
+    box-shadow: 2px 1px 5px rgba(0,0,0,0.3);
+    font-weight: 400;
+}
+
+#text {
   float: left;
   color: rgb(0, 39, 99);
+  font: 100 6.25em/1.38 Lato;
+  display: inline;
 }
 
 
 ul{
     list-style-type: none;
     
-}
-
-a {
-    color: #fff;
-    font-weight: bold;
-    text-decoration: none;
-}
-
-a:link{
-    color: #fff;
-    font-weight: bold;
-    text-decoration: none;
-}
-
-a:hover{
-    color: #fff;
-    font-weight: bold;
-    text-decoration: underline;
-}
-
-a:active{
-    color: #fff;
-    font-weight: bold;
-    text-decoration: none;
 }
