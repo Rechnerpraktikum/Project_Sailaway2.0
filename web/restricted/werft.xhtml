@@ -1,0 +1,175 @@
+<html
+    xmlns="http://www.w3.org/1999/xhtml"
+    xmlns:f="http://xmlns.jcp.org/jsf/core"
+    xmlns:h="http://xmlns.jcp.org/jsf/html"
+    xmlns:ui="http://xmlns.jcp.org/jsf/facelets"
+    xmlns:p="http://primefaces.org/ui">
+    
+    <h:head>
+        <title>Werft</title>
+        <link rel="stylesheet" type="text/css" href="css/main.css" />
+       
+    <th>
+        <p align="center"> 
+            <font size="20">Sailaway Werft:</font>
+        </p>
+    </th>
+        <form>
+            <label for="Typ">
+                <font size="5"> Typ: </font>
+                <input name="Typ"></input>
+            </label>
+
+        </form>
+        <form>
+            <label for="Designer">               
+                <font size="5" > Designer: </font>
+                <input name="Designer"></input>
+            </label>
+        </form>
+        <button>
+            <label>
+                <font size="3">Save
+                </font>
+            </label>
+        </button>
+    </h:head>
+
+    <h:body>
+        <h:outputStylesheet name="css/main.css" />
+<p:dataTable  var="car" value="#{dtBasicView.cars}">
+    <f:facet  name="header">Bauparameter Schiff
+    </f:facet>
+    <p:column headerText="Leistung Motor in kW">
+        <select name='takeation'>
+<option class='head'>Bitte wählen</option>
+<option value='Action 1'>81</option>
+<option value='Action 2'>106</option>
+<option value='Action 3'>146</option>
+        </select>
+    </p:column>
+    <p:column headerText="Tankinhalt maximal">
+        <select name='takeaction'>
+<option class='head'>Bitte wählen</option>
+<option value='Action 1'>300</option>
+<option value='Action 2'>400</option>
+<option value='Action 3'>500</option>
+        </select>      
+    </p:column>
+</p:dataTable>
+<p:dataTable var="car" value="#{dtBasicView.cars}">
+    <f:facet name="header">Laufwerte
+    </f:facet>
+    <p:column headerText="Gewicht in kg">
+        <select name='takeation'>
+<option class='head'>Bitte wählen</option>
+<option value='Action 1'>12000</option>
+<option value='Action 2'>15000</option>
+<option value='Action 3'>20000</option>
+        </select>
+
+    </p:column>
+ 
+    <p:column headerText="Schifflänge in m">
+        <select name='takeation'>
+<option class='head'>Bitte wählen</option>
+<option value='Action 1'>15</option>
+<option value='Action 2'>20</option>
+<option value='Action 3'>25</option>
+        </select>         
+    </p:column>
+</p:dataTable>     
+<p:dataTable var="car" value="#{dtBasicView.cars}">
+    <f:facet name="header">Laufwerte
+    </f:facet>
+    <p:column headerText="Segelfläche in m²">
+        <select name='takeation'>
+<option class='head'>Bitte wählen</option>
+<option value='Action 1'>300</option>
+<option value='Action 2'>400</option>
+<option value='Action 3'>500</option>
+        </select>
+
+    </p:column>
+ 
+    <p:column headerText="Lateralplan in m²">
+        <select name='takeation'>
+<option class='head'>Bitte wählen</option>
+<option value='Action 1'>50</option>
+<option value='Action 2'>100</option>
+<option value='Action 3'>150</option>
+        </select>         
+    </p:column>
+</p:dataTable> 
+<p:dataTable var="car" value="#{dtBasicView.cars}">
+    <f:facet name="header">Laufwerte
+    </f:facet>
+    <p:column headerText="Aufrichtemoment in N">
+        <select name='takeation'>
+<option class='head'>Bitte wählen</option>
+<option value='Action 1'>20000</option>
+<option value='Action 2'>25000</option>
+<option value='Action 3'>30000</option>
+        </select>
+
+    </p:column>
+ 
+    <p:column headerText="Lateralbremsmoment in N">
+        <select name='takeation'>
+<option class='head'>Bitte wählen</option>
+<option value='Action 1'>9000</option>
+<option value='Action 2'>12000</option>
+<option value='Action 3'>15000</option>
+        </select>         
+    </p:column>
+</p:dataTable> 
+<p:dataTable var="car" value="#{dtBasicView.cars}">
+    <f:facet name="header">Laufwerte
+    </f:facet>
+    <p:column headerText="Kraftstoffverbrauch in l/h">
+        <select name='takeation'>
+<option class='head'>Bitte wählen</option>
+<option value='Action 1'>20</option>
+<option value='Action 2'>30</option>
+<option value='Action 3'>50</option>
+        </select>
+
+    </p:column>
+ 
+    <p:column headerText="Maschinenumdrehung in U/min">
+        <select name='takeation'>
+<option class='head'>Bitte wählen</option>
+<option value='Action 1'>4000</option>
+<option value='Action 2'>5000</option>
+<option value='Action 3'>6000</option>
+        </select>         
+    </p:column>
+</p:dataTable> 
+<p:dataTable var="car" value="#{dtBasicView.cars}">
+    <f:facet name="header">Laufwerte
+    </f:facet>
+    <p:column headerText="Abstand von Heck zum Drehpunkt in m">
+        <select name='takeation'>
+<option class='head'>Bitte wählen</option>
+<option value='Action 1'>7</option>
+<option value='Action 2'>10</option>
+<option value='Action 3'>12</option>
+        </select>
+
+    </p:column>
+ 
+    <p:column headerText="Abstand vom Heck zur Schraube in m">
+        <select name='takeation'>
+<option class='head'>Bitte wählen</option>
+<option value='Action 1'>2</option>
+<option value='Action 2'>3</option>
+<option value='Action 3'>4</option>
+        </select>         
+    </p:column>
+</p:dataTable> 
+        <br></br>
+        <br></br>
+        <br></br>
+        <a href="index.xhtml">zurück</a>
+    </h:body>
+</html>
