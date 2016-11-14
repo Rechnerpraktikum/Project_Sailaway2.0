@@ -28,6 +28,13 @@
         </div>
         
         <div id="container">
+        Das Cookie "JSESSIONID" hat den Wert: #{cookie['JSESSIONID'].value}
+        <br/>
+        Der Username in der Session lautet: #{sessionScope['name']}
+        <br/>
+        Das ist dein Schiff: #{session.getAttribute("schiff")}
+        <br/>
+        Das ist das Wetter #{session.getAttribute("wetter")}
             <!-- mit include werden  -->
             <ui:include src="controlpanel.xhtml" />
             
