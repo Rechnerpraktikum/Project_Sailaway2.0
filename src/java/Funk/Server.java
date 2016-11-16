@@ -10,10 +10,10 @@ import java.net.Socket;
 import java.net.SocketException;
 import java.util.ArrayList;
 import java.util.Enumeration;
-import org.teleal.cling.UpnpService;
-import org.teleal.cling.UpnpServiceImpl;
-import org.teleal.cling.support.igd.PortMappingListener;
-import org.teleal.cling.support.model.PortMapping;
+//import org.teleal.cling.UpnpService;
+//import org.teleal.cling.UpnpServiceImpl;
+//import org.teleal.cling.support.igd.PortMappingListener;
+//import org.teleal.cling.support.model.PortMapping;
 
 public class Server {
     
@@ -21,7 +21,7 @@ public class Server {
     private ArrayList<ClientConnection> clients = new ArrayList<ClientConnection>();
     private int port;
     
-    private UpnpService u;
+    //private UpnpService u;
     
     public void addToBroadcastQueue(Message m) {
         try {
@@ -72,8 +72,8 @@ public class Server {
                 Log.add("Not connected to any IPv4 network");
                 throw new Exception("Network error");
             }
-            u = new UpnpServiceImpl(new PortMappingListener(new PortMapping(port, ipAddress, PortMapping.Protocol.TCP)));
-            u.getControlPoint().search();
+            //u = new UpnpServiceImpl(new PortMappingListener(new PortMapping(port, ipAddress, PortMapping.Protocol.TCP)));
+            //u.getControlPoint().search();
         }
         try {
             s = new ServerSocket(port);
