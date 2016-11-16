@@ -1,0 +1,35 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml"
+      xmlns:ui="http://xmlns.jcp.org/jsf/facelets"
+      xmlns:h="http://xmlns.jcp.org/jsf/html"
+      xmlns:f="http://xmlns.jcp.org/jsf/core">
+
+    <ui:composition template="/template.xhtml">
+        <ui:define name="title">
+            <h:outputText value="#{bundle.CreateUsrTitle}"></h:outputText>
+        </ui:define>
+        <ui:define name="body">
+            <h:panelGroup id="messagePanel" layout="block">
+                <h:messages errorStyle="color: red" infoStyle="color: green" layout="table"/>
+            </h:panelGroup>
+            <h:form>
+                <h:panelGrid columns="2">
+                    <h:outputLabel value="#{bundle.CreateUsrLabel_usrid}" for="usrid" />
+                    <h:inputText id="usrid" value="#{usrController.selected.usrid}" title="#{bundle.CreateUsrTitle_usrid}" required="true" requiredMessage="#{bundle.CreateUsrRequiredMessage_usrid}"/>
+                    <h:outputLabel value="#{bundle.CreateUsrLabel_passwort}" for="passwort" />
+                    <h:inputText id="passwort" value="#{usrController.selected.passwort}" title="#{bundle.CreateUsrTitle_passwort}" required="true" requiredMessage="#{bundle.CreateUsrRequiredMessage_passwort}"/>
+                </h:panelGrid>
+                <br />
+                <h:commandLink action="#{usrController.create}" value="#{bundle.CreateUsrSaveLink}" />
+                <br />
+                <br />
+                <h:commandLink action="#{usrController.prepareList}" value="#{bundle.CreateUsrShowAllLink}" immediate="true"/>
+                <br />
+                <br />
+                <h:link outcome="/index" value="#{bundle.CreateUsrIndexLink}"/>
+            </h:form>
+        </ui:define>
+    </ui:composition>
+
+</html>

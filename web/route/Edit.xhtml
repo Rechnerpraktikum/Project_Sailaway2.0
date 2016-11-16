@@ -1,0 +1,40 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml"
+      xmlns:ui="http://xmlns.jcp.org/jsf/facelets"
+      xmlns:h="http://xmlns.jcp.org/jsf/html"
+      xmlns:f="http://xmlns.jcp.org/jsf/core">
+
+    <ui:composition template="/template.xhtml">
+        <ui:define name="title">
+            <h:outputText value="#{bundle.EditRouteTitle}"></h:outputText>
+        </ui:define>
+        <ui:define name="body">
+            <h:panelGroup id="messagePanel" layout="block">
+                <h:messages errorStyle="color: red" infoStyle="color: green" layout="table"/>
+            </h:panelGroup>
+            <h:form>
+                <h:panelGrid columns="2">
+                    <h:outputLabel value="#{bundle.EditRouteLabel_routenid}" for="routenid" />
+                    <h:inputText id="routenid" value="#{routeController.selected.routenid}" title="#{bundle.EditRouteTitle_routenid}" required="true" requiredMessage="#{bundle.EditRouteRequiredMessage_routenid}"/>
+                    <h:outputLabel value="#{bundle.EditRouteLabel_routenname}" for="routenname" />
+                    <h:inputText id="routenname" value="#{routeController.selected.routenname}" title="#{bundle.EditRouteTitle_routenname}" required="true" requiredMessage="#{bundle.EditRouteRequiredMessage_routenname}"/>
+                    <h:outputLabel value="#{bundle.EditRouteLabel_rufzeichen}" for="rufzeichen" />
+                    <h:selectOneMenu id="rufzeichen" value="#{routeController.selected.rufzeichen}" title="#{bundle.EditRouteTitle_rufzeichen}" >
+                        <f:selectItems value="#{schiffController.itemsAvailableSelectOne}"/>
+                    </h:selectOneMenu>
+                </h:panelGrid>
+                <h:commandLink action="#{routeController.update}" value="#{bundle.EditRouteSaveLink}"/>
+                <br />
+                <br />
+                <h:link outcome="View" value="#{bundle.EditRouteViewLink}"/>
+                <br />
+                <h:commandLink action="#{routeController.prepareList}" value="#{bundle.EditRouteShowAllLink}" immediate="true"/>
+                <br />
+                <br />
+                <h:link outcome="/index" value="#{bundle.EditRouteIndexLink}" />
+            </h:form>
+        </ui:define>
+    </ui:composition>
+
+</html>

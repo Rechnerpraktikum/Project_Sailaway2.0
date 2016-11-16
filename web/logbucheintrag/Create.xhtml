@@ -1,0 +1,45 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml"
+      xmlns:ui="http://xmlns.jcp.org/jsf/facelets"
+      xmlns:h="http://xmlns.jcp.org/jsf/html"
+      xmlns:f="http://xmlns.jcp.org/jsf/core">
+
+    <ui:composition template="/template.xhtml">
+        <ui:define name="title">
+            <h:outputText value="#{bundle.CreateLogbucheintragTitle}"></h:outputText>
+        </ui:define>
+        <ui:define name="body">
+            <h:panelGroup id="messagePanel" layout="block">
+                <h:messages errorStyle="color: red" infoStyle="color: green" layout="table"/>
+            </h:panelGroup>
+            <h:form>
+                <h:panelGrid columns="2">
+                    <h:outputLabel value="#{bundle.CreateLogbucheintragLabel_eintragnummer}" for="eintragnummer" />
+                    <h:inputText id="eintragnummer" value="#{logbucheintragController.selected.eintragnummer}" title="#{bundle.CreateLogbucheintragTitle_eintragnummer}" required="true" requiredMessage="#{bundle.CreateLogbucheintragRequiredMessage_eintragnummer}"/>
+                    <h:outputLabel value="#{bundle.CreateLogbucheintragLabel_zeit}" for="zeit" />
+                    <h:inputText id="zeit" value="#{logbucheintragController.selected.zeit}" title="#{bundle.CreateLogbucheintragTitle_zeit}" required="true" requiredMessage="#{bundle.CreateLogbucheintragRequiredMessage_zeit}">
+                        <f:convertDateTime pattern="HH:mm:ss" />
+                    </h:inputText>
+                    <h:outputLabel value="#{bundle.CreateLogbucheintragLabel_longtitude}" for="longtitude" />
+                    <h:inputText id="longtitude" value="#{logbucheintragController.selected.longtitude}" title="#{bundle.CreateLogbucheintragTitle_longtitude}" required="true" requiredMessage="#{bundle.CreateLogbucheintragRequiredMessage_longtitude}"/>
+                    <h:outputLabel value="#{bundle.CreateLogbucheintragLabel_latitude}" for="latitude" />
+                    <h:inputText id="latitude" value="#{logbucheintragController.selected.latitude}" title="#{bundle.CreateLogbucheintragTitle_latitude}" required="true" requiredMessage="#{bundle.CreateLogbucheintragRequiredMessage_latitude}"/>
+                    <h:outputLabel value="#{bundle.CreateLogbucheintragLabel_rufzeichen}" for="rufzeichen" />
+                    <h:selectOneMenu id="rufzeichen" value="#{logbucheintragController.selected.rufzeichen}" title="#{bundle.CreateLogbucheintragTitle_rufzeichen}" >
+                        <f:selectItems value="#{schiffController.itemsAvailableSelectOne}"/>
+                    </h:selectOneMenu>
+                </h:panelGrid>
+                <br />
+                <h:commandLink action="#{logbucheintragController.create}" value="#{bundle.CreateLogbucheintragSaveLink}" />
+                <br />
+                <br />
+                <h:commandLink action="#{logbucheintragController.prepareList}" value="#{bundle.CreateLogbucheintragShowAllLink}" immediate="true"/>
+                <br />
+                <br />
+                <h:link outcome="/index" value="#{bundle.CreateLogbucheintragIndexLink}"/>
+            </h:form>
+        </ui:define>
+    </ui:composition>
+
+</html>

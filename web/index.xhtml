@@ -1,12 +1,13 @@
 <?xml version='1.0' encoding='UTF-8' ?>
 <!DOCTYPE html>
 <html lang="en"
-    xmlns="http://www.w3.org/1999/xhtml"
-    xmlns:f="http://xmlns.jcp.org/jsf/core"
-    xmlns:h="http://xmlns.jcp.org/jsf/html"
-    xmlns:ui="http://xmlns.jcp.org/jsf/facelets">
+      xmlns="http://www.w3.org/1999/xhtml"
+      xmlns:f="http://xmlns.jcp.org/jsf/core"
+      xmlns:h="http://xmlns.jcp.org/jsf/html"
+      xmlns:ui="http://xmlns.jcp.org/jsf/facelets">
     <head>
         <title>SailAway</title>
+        <h:outputStylesheet name="css/jsfcrud.css"/>
         <link href="http://fonts.googleapis.com/css?family=Lato:400,100" rel="stylesheet" type="text/css"/>
         <link rel="stylesheet" href="css/standardize.css"/>
         <link rel="stylesheet" type="text/css" href="css/main.css" />
@@ -19,11 +20,41 @@
                 <input class="loginputs" type="password" placeholder="Passwort" name="password"/>
                 <input type="submit" value="Login"></input>
             </form>
-        
+
             <form class="loginform" action="addUser.xhtml" method="post" >
                 <input id="register" type="submit" value="Registrieren" />
             </form>
         </div>
+        <br />
+        <h:link outcome="/artikel/List" value="Show All Artikel Items"/>
+        <br />
+        <h:link outcome="/crewmember/List" value="Show All Crewmember Items"/>
+        <br />
+        <h:link outcome="/hafen/List" value="Show All Hafen Items"/>
+        <br />
+        <h:link outcome="/kanten/List" value="Show All Kanten Items"/>
+        <br />
+        <h:link outcome="/logbucheintrag/List" value="Show All Logbucheintrag Items"/>
+        <br />
+        <h:link outcome="/route/List" value="Show All Route Items"/>
+        <br />
+        <h:link outcome="/schiff/List" value="Show All Schiff Items"/>
+        <br />
+        <h:link outcome="/schiffsmodell/List" value="Show All Schiffsmodell Items"/>
+        <br />
+        <h:link outcome="/usr/List" value="Show All Usr Items"/>
+        <br />
+        <h:link outcome="/wegpunkte/List" value="Show All Wegpunkte Items"/>
     </body>
+
+
+
+
+
+
+
+
+
+
 </html>
 

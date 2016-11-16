@@ -1,0 +1,40 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml"
+      xmlns:ui="http://xmlns.jcp.org/jsf/facelets"
+      xmlns:h="http://xmlns.jcp.org/jsf/html"
+      xmlns:f="http://xmlns.jcp.org/jsf/core">
+
+    <ui:composition template="/template.xhtml">
+        <ui:define name="title">
+            <h:outputText value="#{bundle.ViewSchiffsmodellTitle}"></h:outputText>
+        </ui:define>
+        <ui:define name="body">
+            <h:panelGroup id="messagePanel" layout="block">
+                <h:messages errorStyle="color: red" infoStyle="color: green" layout="table"/>
+            </h:panelGroup>
+            <h:form>
+                <h:panelGrid columns="2">
+                    <h:outputText value="#{bundle.ViewSchiffsmodellLabel_modellid}"/>
+                    <h:outputText value="#{schiffsmodellController.selected.modellid}" title="#{bundle.ViewSchiffsmodellTitle_modellid}"/>
+                    <h:outputText value="#{bundle.ViewSchiffsmodellLabel_modellname}"/>
+                    <h:outputText value="#{schiffsmodellController.selected.modellname}" title="#{bundle.ViewSchiffsmodellTitle_modellname}"/>
+                </h:panelGrid>
+                <br />
+                <h:commandLink action="#{schiffsmodellController.destroyAndView}" value="#{bundle.ViewSchiffsmodellDestroyLink}"/>
+                <br />
+                <br />
+                <h:link outcome="Edit" value="#{bundle.ViewSchiffsmodellEditLink}"/>
+                <br />
+                <h:commandLink action="#{schiffsmodellController.prepareCreate}" value="#{bundle.ViewSchiffsmodellCreateLink}" />
+                <br />
+                <h:commandLink action="#{schiffsmodellController.prepareList}" value="#{bundle.ViewSchiffsmodellShowAllLink}"/>
+                <br />
+                <br />
+                <h:link outcome="/index" value="#{bundle.ViewSchiffsmodellIndexLink}"/>
+
+            </h:form>
+        </ui:define>
+    </ui:composition>
+
+</html>
