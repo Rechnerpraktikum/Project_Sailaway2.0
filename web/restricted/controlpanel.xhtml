@@ -2,65 +2,12 @@
     xmlns="http://www.w3.org/1999/xhtml"
     xmlns:f="http://xmlns.jcp.org/jsf/core"
     xmlns:h="http://xmlns.jcp.org/jsf/html"
-    xmlns:ui="http://xmlns.jcp.org/jsf/facelets"
-    xmlns:p="http://primefaces.org/ui">
+    xmlns:ui="http://xmlns.jcp.org/jsf/facelets">
     <h2>Controlpanel</h2>
-    <h:form>
-            
-        <p:growl id="growl" showDetail="true" />
-        
-        <h3 style="margin-top: 0">Ruder (Wert in Grad °)</h3>
-        <h:panelGrid columns="1" style="margin-bottom: 10px">
-            <p:inputText id="rl" value="#{controlModule.rl}" />
-            <p:slider for="rl" maxValue="90" minValue="-90" />
-        </h:panelGrid>
-        
-        <h3 style="margin-top: 0">Baum (Wert in Grad °)</h3>
-        <h:panelGrid columns="1" style="margin-bottom: 10px">
-            <p:inputText id="bam" value="#{controlModule.bam}" />
-            <p:slider for="bam" maxValue="90" minValue="-90"/>
-        </h:panelGrid>
-        
-        <h3>Reff</h3>
-        <h:panelGrid columns="1" style="margin-bottom: 10px">
-            <h:outputText id="outputsfr" value="#{controlModule.sfr}% Segelfäche" />
-            <h:inputHidden id="sfr" value="#{controlModule.sfr}" />
-            <p:slider for="sfr" display="outputsfr" step="25" maxValue="100" style="width: 200px" displayTemplate="{value}% Segelfläche"/>
-        </h:panelGrid>
- 
-        <h3>Motor</h3>
-        <h:panelGrid columns="1" style="margin-bottom: 10px">
-            <h:outputText id="outputrpm" value="RPM: #{controlModule.rpm} U/Min" />
-            <h:inputHidden id="rpm" value="#{controlModule.rpm}" />
-            <p:slider for="rpm" display="outputrpm" maxValue="2000" style="width: 200px" displayTemplate="RPM: {value} U/Min" />
-        </h:panelGrid>
- 
-        <h3>Maschine Ein/Aus</h3>
-        <h:panelGrid columns="1" style="margin-bottom:10px" cellpadding="5">
-            <p:selectBooleanButton id="eon" value="#{controlModule.eon}" onLabel="On" offLabel="Off" style="width:60px" />
-        </h:panelGrid>
-        
-        <p:chart type="metergauge" model="#{controlModule.fuelGaugeModel}" style="width:400px;height:250px" />
-        
-        <p:separator />
- 
-        <!-- Submit Button zwecks Testens, muss durch Live Update ersetzt werden-->
-        <p:commandButton value="Submit" update="display" oncomplete="PF('dlg').show();" />
- 
-        <p:dialog header="Slider Values" showEffect="fade" hideEffect="fade" widgetVar="dlg">
-            <h:panelGrid id="display" columns="1" cellpadding="5">
-                <h:outputText value="Number 1: #{controlModule.rl}" />
- 
-                <h:outputText value="Number 2: #{controlModule.bam}" />
- 
-                <h:outputText value="Number 3: #{controlModule.sfr}" />
- 
-                <h:outputText value="Number 4: #{controlModule.rpm}" />
- 
-                <h:outputText value="Number 5: #{controlModule.eon}" />
-            </h:panelGrid>
-        </p:dialog>
-        </h:form>
+    <p>Das ist das Controlpanel</p>
+    <!-- in controlpanel weitere module einfügen -->
+    <ui:include src="wetterkarte.xhtml" />
+    <ui:include src="windmesser.xhtml" />
     
     
     
