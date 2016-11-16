@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+
+
+<html lang="en">
+  <head>
+    <link rel="stylesheet" href="https://openlayers.org/en/v3.19.1/css/ol.css" type="text/css">
+    <style>
+      .map {
+        height: 950px;
+        width: 100%;
+      }    
+    </style>
+    <script src="https://openlayers.org/en/v3.19.1/build/ol.js" type="text/javascript"></script>
+    <title> Regattaansicht</title>
+  </head>
+  <body>
+    <h2> Regattaansicht </h2>
+    <div id="map" class="map"></div>
+   <a href="javascript:history.back()">Sailaway</a>
+ 
+    <script type="text/javascript">
+      var map = new ol.Map({
+        target: 'map',
+        layers: [
+          new ol.layer.Tile({
+            source: new ol.source.OSM()
+          })
+        ],
+        view: new ol.View({
+         center: ol.proj.fromLonLat([15.58,43.83]),
+          zoom: 15
+        })
+      });
+   layerMarkers = new OpenLayers.Layer.Markers("Markers");
+			map.addLayer(layerMarkers);
+   var size = new ol.Size(20, 20);
+   var offset = new ol.Pixel(-(size.w/2), -size.h);
+   var enemy = new ol.Icon(' http://www.bistroachterdeck.de/fileadmin/Resources/bistroachterdeck/images/Roter-punkt.png',size,offset);
+   var user = new ol.Icon(' http://www.heike-rahlves.de/grafik/gruen1.png',size,offset);
+   layerMarkers.addMarker(new ol.Marker(lonLat,user));
+   layerMarkers.addMarker(new ol.Marker(lonLat,enemy));
+    
+    public DataModel getItems() {
+        if (items == null) {
+            items = getPagination().createPageDataModel();
+        }
+        return items;
+    }
+     <h:outputText value="#{bundle.ListSchiffTitle_latitude}"/>
+                            </f:facet>
+                            <h:outputText value="#{item.latitude}"/>
+                        </h:column>
+      
+     <h:outputText value="#{bundle.ListSchiffTitle_longtitude}"/>
+                            </f:facet>
+                            <h:outputText value="#{item.longtitude}"/>
+                        </h:column>              
+  
+    </script>
+
+  </body>
+</html>
