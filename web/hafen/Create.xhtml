@@ -1,0 +1,37 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml"
+      xmlns:ui="http://xmlns.jcp.org/jsf/facelets"
+      xmlns:h="http://xmlns.jcp.org/jsf/html"
+      xmlns:f="http://xmlns.jcp.org/jsf/core">
+
+    <ui:composition template="/template.xhtml">
+        <ui:define name="title">
+            <h:outputText value="#{bundle.CreateHafenTitle}"></h:outputText>
+        </ui:define>
+        <ui:define name="body">
+            <h:panelGroup id="messagePanel" layout="block">
+                <h:messages errorStyle="color: red" infoStyle="color: green" layout="table"/>
+            </h:panelGroup>
+            <h:form>
+                <h:panelGrid columns="2">
+                    <h:outputLabel value="#{bundle.CreateHafenLabel_unlocode}" for="unlocode" />
+                    <h:inputText id="unlocode" value="#{hafenController.selected.unlocode}" title="#{bundle.CreateHafenTitle_unlocode}" required="true" requiredMessage="#{bundle.CreateHafenRequiredMessage_unlocode}"/>
+                    <h:outputLabel value="#{bundle.CreateHafenLabel_stadt}" for="stadt" />
+                    <h:inputText id="stadt" value="#{hafenController.selected.stadt}" title="#{bundle.CreateHafenTitle_stadt}" required="true" requiredMessage="#{bundle.CreateHafenRequiredMessage_stadt}"/>
+                    <h:outputLabel value="#{bundle.CreateHafenLabel_land}" for="land" />
+                    <h:inputText id="land" value="#{hafenController.selected.land}" title="#{bundle.CreateHafenTitle_land}" required="true" requiredMessage="#{bundle.CreateHafenRequiredMessage_land}"/>
+                </h:panelGrid>
+                <br />
+                <h:commandLink action="#{hafenController.create}" value="#{bundle.CreateHafenSaveLink}" />
+                <br />
+                <br />
+                <h:commandLink action="#{hafenController.prepareList}" value="#{bundle.CreateHafenShowAllLink}" immediate="true"/>
+                <br />
+                <br />
+                <h:link outcome="/index" value="#{bundle.CreateHafenIndexLink}"/>
+            </h:form>
+        </ui:define>
+    </ui:composition>
+
+</html>

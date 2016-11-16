@@ -1,0 +1,206 @@
+body {
+  height: 100%;
+  background: url('../images/blue-ocean-wallpaper-2(2).jpg') rgb(255, 255, 255);
+  background-repeat: no-repeat;
+  background-size: auto auto;
+  background-position: center center;
+  background-attachment: fixed;
+  font: 100 6.25em/1.38 Lato;
+  color: rgb(0, 39, 99);
+}
+
+.container {
+  position: fixed;
+  top: 398px;
+  left: 0;
+  right: 0;
+  z-index: 5;
+  width: 73.1497395833%;
+  height: 138px;
+  margin: 0 auto;
+}
+
+.container .text {
+  font-size: 1em;
+  color: rgb(0, 39, 99);
+}
+
+.element {
+  position: relative;
+  float: left;
+  z-index: 0;
+  background-color: rgb(222, 222, 222);
+}
+
+.text {
+  float: left;
+}
+
+._button {
+  display: block;
+  float: left;
+  width: 9.2952882749%;
+  height: 35px;
+  margin: 74px 0 0 2.17875%;
+  border: 1px solid rgba(0, 0, 0, 0.3);
+  border-radius: 15px;
+  background-color: rgb(255, 255, 255);
+  box-shadow: 2px 1px 5px rgba(0, 0, 0, 0.3);
+  font-size: 0.16em;
+  font-weight: 400;
+  text-align: center;
+  color: rgb(0, 39, 99);
+}
+
+._input {
+  display: block;
+  float: left;
+  width: 16.4047063849%;
+  height: 35px;
+  margin-top: 74px;
+  padding: 0 10px;
+  border: 1px solid rgba(0, 0, 0, 0.3);
+  border-radius: 15px;
+  background-color: rgb(242, 242, 242);
+  box-shadow: 2px 1px 5px rgba(0, 0, 0, 0.3);
+  font-size: 0.13em;
+  font-weight: 400;
+  color: rgba(0, 0, 0, 0.3);
+}
+
+.text-1 {
+  position: relative;
+  z-index: 6;
+  width: 21.3166666666%;
+  min-height: 95px;
+  margin: 115px 0 0 23.59896%;
+  font-size: 0.16em;
+  font-weight: 400;
+  color: rgb(0, 0, 0);
+}
+
+.container ._input-1 {
+  margin-left: 11.48294%;
+}
+
+.container ._input-2 {
+  margin-left: 2.18231%;
+}
+
+.text span {
+  border-top-width: 0;
+  border-right-width: 0;
+  border-bottom-width: 0;
+  border-left-width: 0;
+  border-color: transparent;
+  border-style: none;
+  border-top-left-radius: 0;
+  border-top-right-radius: 0;
+  border-bottom-right-radius: 0;
+  border-bottom-left-radius: 0;
+  background-color: transparent;
+  font-family: inherit;
+  font-style: inherit;
+  font-size: inherit;
+  font-weight: inherit;
+  text-transform: inherit;
+  text-decoration: inherit;
+  letter-spacing: inherit;
+  word-spacing: inherit;
+  color: inherit;
+  opacity: 1;
+  word-break: normal;
+  word-wrap: normal;
+  white-space: normal;
+}
+
+@media(max-width: 900px) {
+  .container {
+    top: 245px;
+    right: auto;
+  }
+
+  .container .text {
+    margin-top: 1px;
+    margin-left: -2.25234%;
+    padding-bottom: 100px;
+  }
+
+  .element {
+    position: relative;
+    z-index: 0;
+  }
+
+  .container ._button {
+    clear: both;
+    width: 9.294156738%;
+    margin-top: -167px;
+    margin-left: 98.9035%;
+  }
+
+  .container ._input {
+    width: 16.4048037214%;
+    margin-top: 72px;
+  }
+
+  .text-1 {
+    position: relative;
+    z-index: 6;
+  }
+
+  .container ._input-1 {
+    margin-left: 9.02122%;
+  }
+
+  .container ._input-2 {
+    margin-left: 2.18351%;
+  }
+}
+
+@media(max-width: 640px) {
+  body {
+    font-size: 6.25em;
+  }
+
+  .container .text {
+    position: relative;
+    z-index: 1;
+    margin-top: 0;
+    margin-left: -8.89794%;
+    padding-bottom: 0;
+  }
+
+  .element {
+    position: relative;
+    z-index: 0;
+  }
+
+  .text {
+    position: relative;
+    z-index: 6;
+    margin-left: 23.59375%;
+  }
+
+  .container ._button {
+    clear: none;
+    width: 9.2951071357%;
+    margin-top: -64px;
+    margin-left: 90.69488%;
+  }
+
+  .container ._input {
+    width: 16.404111875%;
+    margin-top: -64px;
+  }
+
+  .container ._input-1 {
+    position: relative;
+    clear: both;
+    z-index: 3;
+    margin-left: 53.52113%;
+  }
+
+  .container ._input-2 {
+    margin-left: 72.108%;
+  }
+}

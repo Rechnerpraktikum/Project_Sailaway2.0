@@ -1,0 +1,42 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml"
+      xmlns:ui="http://xmlns.jcp.org/jsf/facelets"
+      xmlns:h="http://xmlns.jcp.org/jsf/html"
+      xmlns:f="http://xmlns.jcp.org/jsf/core">
+
+    <ui:composition template="/template.xhtml">
+        <ui:define name="title">
+            <h:outputText value="#{bundle.EditKantenTitle}"></h:outputText>
+        </ui:define>
+        <ui:define name="body">
+            <h:panelGroup id="messagePanel" layout="block">
+                <h:messages errorStyle="color: red" infoStyle="color: green" layout="table"/>
+            </h:panelGroup>
+            <h:form>
+                <h:panelGrid columns="2">
+                    <h:outputLabel value="#{bundle.EditKantenLabel_kantennummer}" for="kantennummer" />
+                    <h:inputText id="kantennummer" value="#{kantenController.selected.kantennummer}" title="#{bundle.EditKantenTitle_kantennummer}" required="true" requiredMessage="#{bundle.EditKantenRequiredMessage_kantennummer}"/>
+                    <h:outputLabel value="#{bundle.EditKantenLabel_longtitude}" for="longtitude" />
+                    <h:inputText id="longtitude" value="#{kantenController.selected.longtitude}" title="#{bundle.EditKantenTitle_longtitude}" required="true" requiredMessage="#{bundle.EditKantenRequiredMessage_longtitude}"/>
+                    <h:outputLabel value="#{bundle.EditKantenLabel_latitude}" for="latitude" />
+                    <h:inputText id="latitude" value="#{kantenController.selected.latitude}" title="#{bundle.EditKantenTitle_latitude}" required="true" requiredMessage="#{bundle.EditKantenRequiredMessage_latitude}"/>
+                    <h:outputLabel value="#{bundle.EditKantenLabel_unlocode}" for="unlocode" />
+                    <h:selectOneMenu id="unlocode" value="#{kantenController.selected.unlocode}" title="#{bundle.EditKantenTitle_unlocode}" >
+                        <f:selectItems value="#{hafenController.itemsAvailableSelectOne}"/>
+                    </h:selectOneMenu>
+                </h:panelGrid>
+                <h:commandLink action="#{kantenController.update}" value="#{bundle.EditKantenSaveLink}"/>
+                <br />
+                <br />
+                <h:link outcome="View" value="#{bundle.EditKantenViewLink}"/>
+                <br />
+                <h:commandLink action="#{kantenController.prepareList}" value="#{bundle.EditKantenShowAllLink}" immediate="true"/>
+                <br />
+                <br />
+                <h:link outcome="/index" value="#{bundle.EditKantenIndexLink}" />
+            </h:form>
+        </ui:define>
+    </ui:composition>
+
+</html>

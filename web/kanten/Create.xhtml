@@ -1,0 +1,41 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml"
+      xmlns:ui="http://xmlns.jcp.org/jsf/facelets"
+      xmlns:h="http://xmlns.jcp.org/jsf/html"
+      xmlns:f="http://xmlns.jcp.org/jsf/core">
+
+    <ui:composition template="/template.xhtml">
+        <ui:define name="title">
+            <h:outputText value="#{bundle.CreateKantenTitle}"></h:outputText>
+        </ui:define>
+        <ui:define name="body">
+            <h:panelGroup id="messagePanel" layout="block">
+                <h:messages errorStyle="color: red" infoStyle="color: green" layout="table"/>
+            </h:panelGroup>
+            <h:form>
+                <h:panelGrid columns="2">
+                    <h:outputLabel value="#{bundle.CreateKantenLabel_kantennummer}" for="kantennummer" />
+                    <h:inputText id="kantennummer" value="#{kantenController.selected.kantennummer}" title="#{bundle.CreateKantenTitle_kantennummer}" required="true" requiredMessage="#{bundle.CreateKantenRequiredMessage_kantennummer}"/>
+                    <h:outputLabel value="#{bundle.CreateKantenLabel_longtitude}" for="longtitude" />
+                    <h:inputText id="longtitude" value="#{kantenController.selected.longtitude}" title="#{bundle.CreateKantenTitle_longtitude}" required="true" requiredMessage="#{bundle.CreateKantenRequiredMessage_longtitude}"/>
+                    <h:outputLabel value="#{bundle.CreateKantenLabel_latitude}" for="latitude" />
+                    <h:inputText id="latitude" value="#{kantenController.selected.latitude}" title="#{bundle.CreateKantenTitle_latitude}" required="true" requiredMessage="#{bundle.CreateKantenRequiredMessage_latitude}"/>
+                    <h:outputLabel value="#{bundle.CreateKantenLabel_unlocode}" for="unlocode" />
+                    <h:selectOneMenu id="unlocode" value="#{kantenController.selected.unlocode}" title="#{bundle.CreateKantenTitle_unlocode}" >
+                        <f:selectItems value="#{hafenController.itemsAvailableSelectOne}"/>
+                    </h:selectOneMenu>
+                </h:panelGrid>
+                <br />
+                <h:commandLink action="#{kantenController.create}" value="#{bundle.CreateKantenSaveLink}" />
+                <br />
+                <br />
+                <h:commandLink action="#{kantenController.prepareList}" value="#{bundle.CreateKantenShowAllLink}" immediate="true"/>
+                <br />
+                <br />
+                <h:link outcome="/index" value="#{bundle.CreateKantenIndexLink}"/>
+            </h:form>
+        </ui:define>
+    </ui:composition>
+
+</html>

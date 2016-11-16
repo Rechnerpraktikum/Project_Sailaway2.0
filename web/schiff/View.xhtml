@@ -1,0 +1,74 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml"
+      xmlns:ui="http://xmlns.jcp.org/jsf/facelets"
+      xmlns:h="http://xmlns.jcp.org/jsf/html"
+      xmlns:f="http://xmlns.jcp.org/jsf/core">
+
+    <ui:composition template="/template.xhtml">
+        <ui:define name="title">
+            <h:outputText value="#{bundle.ViewSchiffTitle}"></h:outputText>
+        </ui:define>
+        <ui:define name="body">
+            <h:panelGroup id="messagePanel" layout="block">
+                <h:messages errorStyle="color: red" infoStyle="color: green" layout="table"/>
+            </h:panelGroup>
+            <h:form>
+                <h:panelGrid columns="2">
+                    <h:outputText value="#{bundle.ViewSchiffLabel_rufzeichen}"/>
+                    <h:outputText value="#{schiffController.selected.rufzeichen}" title="#{bundle.ViewSchiffTitle_rufzeichen}"/>
+                    <h:outputText value="#{bundle.ViewSchiffLabel_schiffname}"/>
+                    <h:outputText value="#{schiffController.selected.schiffname}" title="#{bundle.ViewSchiffTitle_schiffname}"/>
+                    <h:outputText value="#{bundle.ViewSchiffLabel_latitude}"/>
+                    <h:outputText value="#{schiffController.selected.latitude}" title="#{bundle.ViewSchiffTitle_latitude}"/>
+                    <h:outputText value="#{bundle.ViewSchiffLabel_longtitude}"/>
+                    <h:outputText value="#{schiffController.selected.longtitude}" title="#{bundle.ViewSchiffTitle_longtitude}"/>
+                    <h:outputText value="#{bundle.ViewSchiffLabel_tankinhalt}"/>
+                    <h:outputText value="#{schiffController.selected.tankinhalt}" title="#{bundle.ViewSchiffTitle_tankinhalt}"/>
+                    <h:outputText value="#{bundle.ViewSchiffLabel_sfm}"/>
+                    <h:outputText value="#{schiffController.selected.sfm}" title="#{bundle.ViewSchiffTitle_sfm}"/>
+                    <h:outputText value="#{bundle.ViewSchiffLabel_m}"/>
+                    <h:outputText value="#{schiffController.selected.m}" title="#{bundle.ViewSchiffTitle_m}"/>
+                    <h:outputText value="#{bundle.ViewSchiffLabel_lp}"/>
+                    <h:outputText value="#{schiffController.selected.lp}" title="#{bundle.ViewSchiffTitle_lp}"/>
+                    <h:outputText value="#{bundle.ViewSchiffLabel_lwl}"/>
+                    <h:outputText value="#{schiffController.selected.lwl}" title="#{bundle.ViewSchiffTitle_lwl}"/>
+                    <h:outputText value="#{bundle.ViewSchiffLabel_amm}"/>
+                    <h:outputText value="#{schiffController.selected.amm}" title="#{bundle.ViewSchiffTitle_amm}"/>
+                    <h:outputText value="#{bundle.ViewSchiffLabel_lbm}"/>
+                    <h:outputText value="#{schiffController.selected.lbm}" title="#{bundle.ViewSchiffTitle_lbm}"/>
+                    <h:outputText value="#{bundle.ViewSchiffLabel_ksm}"/>
+                    <h:outputText value="#{schiffController.selected.ksm}" title="#{bundle.ViewSchiffTitle_ksm}"/>
+                    <h:outputText value="#{bundle.ViewSchiffLabel_ksv}"/>
+                    <h:outputText value="#{schiffController.selected.ksv}" title="#{bundle.ViewSchiffTitle_ksv}"/>
+                    <h:outputText value="#{bundle.ViewSchiffLabel_rpmm}"/>
+                    <h:outputText value="#{schiffController.selected.rpmm}" title="#{bundle.ViewSchiffTitle_rpmm}"/>
+                    <h:outputText value="#{bundle.ViewSchiffLabel_ddp}"/>
+                    <h:outputText value="#{schiffController.selected.ddp}" title="#{bundle.ViewSchiffTitle_ddp}"/>
+                    <h:outputText value="#{bundle.ViewSchiffLabel_dds}"/>
+                    <h:outputText value="#{schiffController.selected.dds}" title="#{bundle.ViewSchiffTitle_dds}"/>
+                    <h:outputText value="#{bundle.ViewSchiffLabel_lm}"/>
+                    <h:outputText value="#{schiffController.selected.lm}" title="#{bundle.ViewSchiffTitle_lm}"/>
+                    <h:outputText value="#{bundle.ViewSchiffLabel_modellid}"/>
+                    <h:outputText value="#{schiffController.selected.modellid}" title="#{bundle.ViewSchiffTitle_modellid}"/>
+                    <h:outputText value="#{bundle.ViewSchiffLabel_usrid}"/>
+                    <h:outputText value="#{schiffController.selected.usrid}" title="#{bundle.ViewSchiffTitle_usrid}"/>
+                </h:panelGrid>
+                <br />
+                <h:commandLink action="#{schiffController.destroyAndView}" value="#{bundle.ViewSchiffDestroyLink}"/>
+                <br />
+                <br />
+                <h:link outcome="Edit" value="#{bundle.ViewSchiffEditLink}"/>
+                <br />
+                <h:commandLink action="#{schiffController.prepareCreate}" value="#{bundle.ViewSchiffCreateLink}" />
+                <br />
+                <h:commandLink action="#{schiffController.prepareList}" value="#{bundle.ViewSchiffShowAllLink}"/>
+                <br />
+                <br />
+                <h:link outcome="/index" value="#{bundle.ViewSchiffIndexLink}"/>
+
+            </h:form>
+        </ui:define>
+    </ui:composition>
+
+</html>

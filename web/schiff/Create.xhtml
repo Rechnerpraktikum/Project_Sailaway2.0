@@ -1,0 +1,73 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml"
+      xmlns:ui="http://xmlns.jcp.org/jsf/facelets"
+      xmlns:h="http://xmlns.jcp.org/jsf/html"
+      xmlns:f="http://xmlns.jcp.org/jsf/core">
+
+    <ui:composition template="/template.xhtml">
+        <ui:define name="title">
+            <h:outputText value="#{bundle.CreateSchiffTitle}"></h:outputText>
+        </ui:define>
+        <ui:define name="body">
+            <h:panelGroup id="messagePanel" layout="block">
+                <h:messages errorStyle="color: red" infoStyle="color: green" layout="table"/>
+            </h:panelGroup>
+            <h:form>
+                <h:panelGrid columns="2">
+                    <h:outputLabel value="#{bundle.CreateSchiffLabel_rufzeichen}" for="rufzeichen" />
+                    <h:inputText id="rufzeichen" value="#{schiffController.selected.rufzeichen}" title="#{bundle.CreateSchiffTitle_rufzeichen}" required="true" requiredMessage="#{bundle.CreateSchiffRequiredMessage_rufzeichen}"/>
+                    <h:outputLabel value="#{bundle.CreateSchiffLabel_schiffname}" for="schiffname" />
+                    <h:inputText id="schiffname" value="#{schiffController.selected.schiffname}" title="#{bundle.CreateSchiffTitle_schiffname}" required="true" requiredMessage="#{bundle.CreateSchiffRequiredMessage_schiffname}"/>
+                    <h:outputLabel value="#{bundle.CreateSchiffLabel_latitude}" for="latitude" />
+                    <h:inputText id="latitude" value="#{schiffController.selected.latitude}" title="#{bundle.CreateSchiffTitle_latitude}" required="true" requiredMessage="#{bundle.CreateSchiffRequiredMessage_latitude}"/>
+                    <h:outputLabel value="#{bundle.CreateSchiffLabel_longtitude}" for="longtitude" />
+                    <h:inputText id="longtitude" value="#{schiffController.selected.longtitude}" title="#{bundle.CreateSchiffTitle_longtitude}" required="true" requiredMessage="#{bundle.CreateSchiffRequiredMessage_longtitude}"/>
+                    <h:outputLabel value="#{bundle.CreateSchiffLabel_tankinhalt}" for="tankinhalt" />
+                    <h:inputText id="tankinhalt" value="#{schiffController.selected.tankinhalt}" title="#{bundle.CreateSchiffTitle_tankinhalt}" required="true" requiredMessage="#{bundle.CreateSchiffRequiredMessage_tankinhalt}"/>
+                    <h:outputLabel value="#{bundle.CreateSchiffLabel_sfm}" for="sfm" />
+                    <h:inputText id="sfm" value="#{schiffController.selected.sfm}" title="#{bundle.CreateSchiffTitle_sfm}" />
+                    <h:outputLabel value="#{bundle.CreateSchiffLabel_m}" for="m" />
+                    <h:inputText id="m" value="#{schiffController.selected.m}" title="#{bundle.CreateSchiffTitle_m}" />
+                    <h:outputLabel value="#{bundle.CreateSchiffLabel_lp}" for="lp" />
+                    <h:inputText id="lp" value="#{schiffController.selected.lp}" title="#{bundle.CreateSchiffTitle_lp}" />
+                    <h:outputLabel value="#{bundle.CreateSchiffLabel_lwl}" for="lwl" />
+                    <h:inputText id="lwl" value="#{schiffController.selected.lwl}" title="#{bundle.CreateSchiffTitle_lwl}" />
+                    <h:outputLabel value="#{bundle.CreateSchiffLabel_amm}" for="amm" />
+                    <h:inputText id="amm" value="#{schiffController.selected.amm}" title="#{bundle.CreateSchiffTitle_amm}" />
+                    <h:outputLabel value="#{bundle.CreateSchiffLabel_lbm}" for="lbm" />
+                    <h:inputText id="lbm" value="#{schiffController.selected.lbm}" title="#{bundle.CreateSchiffTitle_lbm}" />
+                    <h:outputLabel value="#{bundle.CreateSchiffLabel_ksm}" for="ksm" />
+                    <h:inputText id="ksm" value="#{schiffController.selected.ksm}" title="#{bundle.CreateSchiffTitle_ksm}" />
+                    <h:outputLabel value="#{bundle.CreateSchiffLabel_ksv}" for="ksv" />
+                    <h:inputText id="ksv" value="#{schiffController.selected.ksv}" title="#{bundle.CreateSchiffTitle_ksv}" />
+                    <h:outputLabel value="#{bundle.CreateSchiffLabel_rpmm}" for="rpmm" />
+                    <h:inputText id="rpmm" value="#{schiffController.selected.rpmm}" title="#{bundle.CreateSchiffTitle_rpmm}" />
+                    <h:outputLabel value="#{bundle.CreateSchiffLabel_ddp}" for="ddp" />
+                    <h:inputText id="ddp" value="#{schiffController.selected.ddp}" title="#{bundle.CreateSchiffTitle_ddp}" />
+                    <h:outputLabel value="#{bundle.CreateSchiffLabel_dds}" for="dds" />
+                    <h:inputText id="dds" value="#{schiffController.selected.dds}" title="#{bundle.CreateSchiffTitle_dds}" />
+                    <h:outputLabel value="#{bundle.CreateSchiffLabel_lm}" for="lm" />
+                    <h:inputText id="lm" value="#{schiffController.selected.lm}" title="#{bundle.CreateSchiffTitle_lm}" />
+                    <h:outputLabel value="#{bundle.CreateSchiffLabel_modellid}" for="modellid" />
+                    <h:selectOneMenu id="modellid" value="#{schiffController.selected.modellid}" title="#{bundle.CreateSchiffTitle_modellid}" >
+                        <f:selectItems value="#{schiffsmodellController.itemsAvailableSelectOne}"/>
+                    </h:selectOneMenu>
+                    <h:outputLabel value="#{bundle.CreateSchiffLabel_usrid}" for="usrid" />
+                    <h:selectOneMenu id="usrid" value="#{schiffController.selected.usrid}" title="#{bundle.CreateSchiffTitle_usrid}" >
+                        <f:selectItems value="#{usrController.itemsAvailableSelectOne}"/>
+                    </h:selectOneMenu>
+                </h:panelGrid>
+                <br />
+                <h:commandLink action="#{schiffController.create}" value="#{bundle.CreateSchiffSaveLink}" />
+                <br />
+                <br />
+                <h:commandLink action="#{schiffController.prepareList}" value="#{bundle.CreateSchiffShowAllLink}" immediate="true"/>
+                <br />
+                <br />
+                <h:link outcome="/index" value="#{bundle.CreateSchiffIndexLink}"/>
+            </h:form>
+        </ui:define>
+    </ui:composition>
+
+</html>

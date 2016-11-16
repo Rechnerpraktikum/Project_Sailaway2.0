@@ -1,0 +1,42 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml"
+      xmlns:ui="http://xmlns.jcp.org/jsf/facelets"
+      xmlns:h="http://xmlns.jcp.org/jsf/html"
+      xmlns:f="http://xmlns.jcp.org/jsf/core">
+
+    <ui:composition template="/template.xhtml">
+        <ui:define name="title">
+            <h:outputText value="#{bundle.ViewRouteTitle}"></h:outputText>
+        </ui:define>
+        <ui:define name="body">
+            <h:panelGroup id="messagePanel" layout="block">
+                <h:messages errorStyle="color: red" infoStyle="color: green" layout="table"/>
+            </h:panelGroup>
+            <h:form>
+                <h:panelGrid columns="2">
+                    <h:outputText value="#{bundle.ViewRouteLabel_routenid}"/>
+                    <h:outputText value="#{routeController.selected.routenid}" title="#{bundle.ViewRouteTitle_routenid}"/>
+                    <h:outputText value="#{bundle.ViewRouteLabel_routenname}"/>
+                    <h:outputText value="#{routeController.selected.routenname}" title="#{bundle.ViewRouteTitle_routenname}"/>
+                    <h:outputText value="#{bundle.ViewRouteLabel_rufzeichen}"/>
+                    <h:outputText value="#{routeController.selected.rufzeichen}" title="#{bundle.ViewRouteTitle_rufzeichen}"/>
+                </h:panelGrid>
+                <br />
+                <h:commandLink action="#{routeController.destroyAndView}" value="#{bundle.ViewRouteDestroyLink}"/>
+                <br />
+                <br />
+                <h:link outcome="Edit" value="#{bundle.ViewRouteEditLink}"/>
+                <br />
+                <h:commandLink action="#{routeController.prepareCreate}" value="#{bundle.ViewRouteCreateLink}" />
+                <br />
+                <h:commandLink action="#{routeController.prepareList}" value="#{bundle.ViewRouteShowAllLink}"/>
+                <br />
+                <br />
+                <h:link outcome="/index" value="#{bundle.ViewRouteIndexLink}"/>
+
+            </h:form>
+        </ui:define>
+    </ui:composition>
+
+</html>
