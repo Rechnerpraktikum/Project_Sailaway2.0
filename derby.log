@@ -1,32 +1,19 @@
-Wed Nov 16 20:31:05 CET 2016 : Apache Derby Network Server - 10.10.2.0 - (1582446) started and ready to accept connections on port 1527
+Fri Nov 18 12:42:47 CET 2016 : Apache Derby Network Server - 10.10.2.0 - (1582446) started and ready to accept connections on port 1527
 ----------------------------------------------------------------
-Wed Nov 16 20:31:05 CET 2016:
-Booting Derby version The Apache Software Foundation - Apache Derby - 10.10.2.0 - (1582446): instance a816c00e-0158-6e9f-04de-000029d051af 
-on database directory /home/h1258009/SR/NetBeansProjects/Project_Sailaway2.0/Project_Sailaway2.0/users with class loader sun.misc.Launcher$AppClassLoader@266474c2 
+Fri Nov 18 12:43:06 CET 2016:
+Booting Derby version The Apache Software Foundation - Apache Derby - 10.10.2.0 - (1582446): instance a816c00e-0158-773f-00e1-000029d051af 
+on database directory /home/h1258009/SR/NetBeansProjects/Project_Sailaway2.0/Project_Sailaway2.0/sun-appserv-samples with class loader sun.misc.Launcher$AppClassLoader@5e2de80c 
 Loaded from file:/opt/WR/netbeans/glassfish-4.1.1/javadb/lib/derby.jar
 java.vendor=Oracle Corporation
-java.runtime.version=1.8.0_111-b16
+java.runtime.version=1.8.0_102-b14
 user.dir=/opt/WR/netbeans/glassfish-4.1.1/javadb
 os.name=Linux
 os.arch=amd64
-os.version=4.7.9-200.fc24.x86_64
+os.version=4.7.6-200.fc24.x86_64
 derby.system.home=/home/h1258009/SR/NetBeansProjects/Project_Sailaway2.0/Project_Sailaway2.0
 Database Class Loader started - derby.database.classpath=''
-----------------------------------------------------------------
-Wed Nov 16 20:31:07 CET 2016:
-Booting Derby version The Apache Software Foundation - Apache Derby - 10.10.2.0 - (1582446): instance a094c023-0158-6e9f-04de-000029d051af 
-on database directory /home/h1258009/SR/NetBeansProjects/Project_Sailaway2.0/Project_Sailaway2.0/SailAwayDB with class loader sun.misc.Launcher$AppClassLoader@266474c2 
-Loaded from file:/opt/WR/netbeans/glassfish-4.1.1/javadb/lib/derby.jar
-java.vendor=Oracle Corporation
-java.runtime.version=1.8.0_111-b16
-user.dir=/opt/WR/netbeans/glassfish-4.1.1/javadb
-os.name=Linux
-os.arch=amd64
-os.version=4.7.9-200.fc24.x86_64
-derby.system.home=/home/h1258009/SR/NetBeansProjects/Project_Sailaway2.0/Project_Sailaway2.0
-Database Class Loader started - derby.database.classpath=''
-Wed Nov 16 20:31:09 CET 2016 Thread[DRDAConnThread_4,5,main] Cleanup action starting
-java.sql.SQLException: Database 'sun-appserv-samples' not found.
+Fri Nov 18 12:43:16 CET 2016 Thread[DRDAConnThread_10,5,main] Cleanup action starting
+java.sql.SQLException: Database 'users' not found.
 	at org.apache.derby.impl.jdbc.SQLExceptionFactory40.getSQLException(Unknown Source)
 	at org.apache.derby.impl.jdbc.Util.newEmbedSQLException(Unknown Source)
 	at org.apache.derby.impl.jdbc.Util.newEmbedSQLException(Unknown Source)
@@ -46,12 +33,12 @@ java.sql.SQLException: Database 'sun-appserv-samples' not found.
 	at org.apache.derby.impl.drda.DRDAConnThread.parseDRDAConnection(Unknown Source)
 	at org.apache.derby.impl.drda.DRDAConnThread.processCommands(Unknown Source)
 	at org.apache.derby.impl.drda.DRDAConnThread.run(Unknown Source)
-Caused by: java.sql.SQLException: Database 'sun-appserv-samples' not found.
+Caused by: java.sql.SQLException: Database 'users' not found.
 	at org.apache.derby.impl.jdbc.SQLExceptionFactory.getSQLException(Unknown Source)
 	at org.apache.derby.impl.jdbc.SQLExceptionFactory40.wrapArgsForTransportAcrossDRDA(Unknown Source)
 	... 19 more
 ============= begin nested exception, level (1) ===========
-java.sql.SQLException: Database 'sun-appserv-samples' not found.
+java.sql.SQLException: Database 'users' not found.
 	at org.apache.derby.impl.jdbc.SQLExceptionFactory.getSQLException(Unknown Source)
 	at org.apache.derby.impl.jdbc.SQLExceptionFactory40.wrapArgsForTransportAcrossDRDA(Unknown Source)
 	at org.apache.derby.impl.jdbc.SQLExceptionFactory40.getSQLException(Unknown Source)
@@ -75,13 +62,51 @@ java.sql.SQLException: Database 'sun-appserv-samples' not found.
 	at org.apache.derby.impl.drda.DRDAConnThread.run(Unknown Source)
 ============= end nested exception, level (1) ===========
 Cleanup action completed
-Wed Nov 16 20:31:09 CET 2016 Thread[DRDAConnThread_4,5,main] (DATABASE = sun-appserv-samples), (DRDAID = {3}), Database 'sun-appserv-samples' not found.
+Fri Nov 18 12:43:16 CET 2016 Thread[DRDAConnThread_10,5,main] (DATABASE = users), (DRDAID = {9}), Database 'users' not found.
 ----------------------------------------------------------------
-Wed Nov 16 20:31:33 CET 2016: Shutting down Derby engine
+Fri Nov 18 12:43:37 CET 2016:
+Shutting down instance a816c00e-0158-773f-00e1-000029d051af on database directory /home/h1258009/SR/NetBeansProjects/Project_Sailaway2.0/Project_Sailaway2.0/sun-appserv-samples with class loader sun.misc.Launcher$AppClassLoader@5e2de80c 
+Fri Nov 18 12:43:37 CET 2016 Thread[DRDAConnThread_10,5,main] (DATABASE = sun-appserv-samples), (DRDAID = {10}), Database 'sun-appserv-samples' shutdown.
 ----------------------------------------------------------------
-Wed Nov 16 20:31:33 CET 2016:
-Shutting down instance a094c023-0158-6e9f-04de-000029d051af on database directory /home/h1258009/SR/NetBeansProjects/Project_Sailaway2.0/Project_Sailaway2.0/SailAwayDB with class loader sun.misc.Launcher$AppClassLoader@266474c2 
+Fri Nov 18 12:43:50 CET 2016:
+Booting Derby version The Apache Software Foundation - Apache Derby - 10.10.2.0 - (1582446): instance 8814411f-0158-773f-00e1-000029d051af 
+on database directory /home/h1258009/SR/NetBeansProjects/Project_Sailaway2.0/Project_Sailaway2.0/users with class loader sun.misc.Launcher$AppClassLoader@5e2de80c 
+Loaded from file:/opt/WR/netbeans/glassfish-4.1.1/javadb/lib/derby.jar
+java.vendor=Oracle Corporation
+java.runtime.version=1.8.0_102-b14
+user.dir=/opt/WR/netbeans/glassfish-4.1.1/javadb
+os.name=Linux
+os.arch=amd64
+os.version=4.7.6-200.fc24.x86_64
+derby.system.home=/home/h1258009/SR/NetBeansProjects/Project_Sailaway2.0/Project_Sailaway2.0
+Database Class Loader started - derby.database.classpath=''
 ----------------------------------------------------------------
-Wed Nov 16 20:31:33 CET 2016:
-Shutting down instance a816c00e-0158-6e9f-04de-000029d051af on database directory /home/h1258009/SR/NetBeansProjects/Project_Sailaway2.0/Project_Sailaway2.0/users with class loader sun.misc.Launcher$AppClassLoader@266474c2 
+Fri Nov 18 12:43:50 CET 2016:
+Shutting down instance 8814411f-0158-773f-00e1-000029d051af on database directory /home/h1258009/SR/NetBeansProjects/Project_Sailaway2.0/Project_Sailaway2.0/users with class loader sun.misc.Launcher$AppClassLoader@5e2de80c 
+Fri Nov 18 12:43:50 CET 2016 Thread[DRDAConnThread_11,5,main] (DATABASE = users), (DRDAID = {12}), Database 'users' shutdown.
 ----------------------------------------------------------------
+Fri Nov 18 12:44:18 CET 2016:
+Booting Derby version The Apache Software Foundation - Apache Derby - 10.10.2.0 - (1582446): instance 7f9bc1bb-0158-773f-00e1-000029d051af 
+on database directory /home/h1258009/SR/NetBeansProjects/Project_Sailaway2.0/Project_Sailaway2.0/users with class loader sun.misc.Launcher$AppClassLoader@5e2de80c 
+Loaded from file:/opt/WR/netbeans/glassfish-4.1.1/javadb/lib/derby.jar
+java.vendor=Oracle Corporation
+java.runtime.version=1.8.0_102-b14
+user.dir=/opt/WR/netbeans/glassfish-4.1.1/javadb
+os.name=Linux
+os.arch=amd64
+os.version=4.7.6-200.fc24.x86_64
+derby.system.home=/home/h1258009/SR/NetBeansProjects/Project_Sailaway2.0/Project_Sailaway2.0
+Database Class Loader started - derby.database.classpath=''
+----------------------------------------------------------------
+Fri Nov 18 12:44:31 CET 2016:
+Booting Derby version The Apache Software Foundation - Apache Derby - 10.10.2.0 - (1582446): instance 539141e7-0158-773f-00e1-000029d051af 
+on database directory /home/h1258009/SR/NetBeansProjects/Project_Sailaway2.0/Project_Sailaway2.0/sun-appserv-samples with class loader sun.misc.Launcher$AppClassLoader@5e2de80c 
+Loaded from file:/opt/WR/netbeans/glassfish-4.1.1/javadb/lib/derby.jar
+java.vendor=Oracle Corporation
+java.runtime.version=1.8.0_102-b14
+user.dir=/opt/WR/netbeans/glassfish-4.1.1/javadb
+os.name=Linux
+os.arch=amd64
+os.version=4.7.6-200.fc24.x86_64
+derby.system.home=/home/h1258009/SR/NetBeansProjects/Project_Sailaway2.0/Project_Sailaway2.0
+Database Class Loader started - derby.database.classpath=''
