@@ -1,0 +1,35 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml"
+      xmlns:ui="http://xmlns.jcp.org/jsf/facelets"
+      xmlns:h="http://xmlns.jcp.org/jsf/html"
+      xmlns:f="http://xmlns.jcp.org/jsf/core">
+
+    <ui:composition template="/template.xhtml">
+        <ui:define name="title">
+            <h:outputText value="#{bundle.CreateArtikelTitle}"></h:outputText>
+        </ui:define>
+        <ui:define name="body">
+            <h:panelGroup id="messagePanel" layout="block">
+                <h:messages errorStyle="color: red" infoStyle="color: green" layout="table"/>
+            </h:panelGroup>
+            <h:form>
+                <h:panelGrid columns="2">
+                    <h:outputLabel value="#{bundle.CreateArtikelLabel_artikelnummer}" for="artikelnummer" />
+                    <h:inputText id="artikelnummer" value="#{artikelController.selected.artikelnummer}" title="#{bundle.CreateArtikelTitle_artikelnummer}" required="true" requiredMessage="#{bundle.CreateArtikelRequiredMessage_artikelnummer}"/>
+                    <h:outputLabel value="#{bundle.CreateArtikelLabel_artikelname}" for="artikelname" />
+                    <h:inputText id="artikelname" value="#{artikelController.selected.artikelname}" title="#{bundle.CreateArtikelTitle_artikelname}" required="true" requiredMessage="#{bundle.CreateArtikelRequiredMessage_artikelname}"/>
+                </h:panelGrid>
+                <br />
+                <h:commandLink action="#{artikelController.create}" value="#{bundle.CreateArtikelSaveLink}" />
+                <br />
+                <br />
+                <h:commandLink action="#{artikelController.prepareList}" value="#{bundle.CreateArtikelShowAllLink}" immediate="true"/>
+                <br />
+                <br />
+                <h:link outcome="/index" value="#{bundle.CreateArtikelIndexLink}"/>
+            </h:form>
+        </ui:define>
+    </ui:composition>
+
+</html>

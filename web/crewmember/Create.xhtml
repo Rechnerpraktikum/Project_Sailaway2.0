@@ -1,0 +1,41 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml"
+      xmlns:ui="http://xmlns.jcp.org/jsf/facelets"
+      xmlns:h="http://xmlns.jcp.org/jsf/html"
+      xmlns:f="http://xmlns.jcp.org/jsf/core">
+
+    <ui:composition template="/template.xhtml">
+        <ui:define name="title">
+            <h:outputText value="#{bundle.CreateCrewmemberTitle}"></h:outputText>
+        </ui:define>
+        <ui:define name="body">
+            <h:panelGroup id="messagePanel" layout="block">
+                <h:messages errorStyle="color: red" infoStyle="color: blue" layout="table"/>
+            </h:panelGroup>
+            <h:form>
+                <h:panelGrid columns="2">
+                    <h:outputLabel value="#{bundle.CreateCrewmemberLabel_crewmemberid}" for="crewmemberid" />
+                    <h:inputText id="crewmemberid" value="#{crewmemberController.selected.crewmemberid}" title="#{bundle.CreateCrewmemberTitle_crewmemberid}" required="true" requiredMessage="#{bundle.CreateCrewmemberRequiredMessage_crewmemberid}"/>
+                    <h:outputLabel value="#{bundle.CreateCrewmemberLabel_vorname}" for="vorname" />
+                    <h:inputText id="vorname" value="#{crewmemberController.selected.vorname}" title="#{bundle.CreateCrewmemberTitle_vorname}" required="true" requiredMessage="#{bundle.CreateCrewmemberRequiredMessage_vorname}"/>
+                    <h:outputLabel value="#{bundle.CreateCrewmemberLabel_nachname}" for="nachname" />
+                    <h:inputText id="nachname" value="#{crewmemberController.selected.nachname}" title="#{bundle.CreateCrewmemberTitle_nachname}" required="true" requiredMessage="#{bundle.CreateCrewmemberRequiredMessage_nachname}"/>
+                    <h:outputLabel value="#{bundle.CreateCrewmemberLabel_rufzeichen}" for="rufzeichen" />
+                    <h:selectOneMenu id="rufzeichen" value="#{crewmemberController.selected.rufzeichen}" title="#{bundle.CreateCrewmemberTitle_rufzeichen}" >
+                        <f:selectItems value="#{schiffController.itemsAvailableSelectOne}"/>
+                    </h:selectOneMenu>
+                </h:panelGrid>
+                <br />
+                <h:commandLink action="#{crewmemberController.create}" value="#{bundle.CreateCrewmemberSaveLink}" />
+                <br />
+                <br />
+                <h:commandLink action="#{crewmemberController.prepareList}" value="#{bundle.CreateCrewmemberShowAllLink}" immediate="true"/>
+                <br />
+                <br />
+                <h:link outcome="/index" value="#{bundle.CreateCrewmemberIndexLink}"/>
+            </h:form>
+        </ui:define>
+    </ui:composition>
+
+</html>

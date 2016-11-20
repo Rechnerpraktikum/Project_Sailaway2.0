@@ -1,25 +1,25 @@
-Mon Nov 14 18:00:02 CET 2016 : Apache Derby Network Server - 10.10.2.0 - (1582446) started and ready to accept connections on port 1527
+Fri Nov 18 12:42:47 CET 2016 : Apache Derby Network Server - 10.10.2.0 - (1582446) started and ready to accept connections on port 1527
 ----------------------------------------------------------------
-Mon Nov 14 18:00:02 CET 2016:
-Booting Derby version The Apache Software Foundation - Apache Derby - 10.10.2.0 - (1582446): instance a816c00e-0158-63c8-053c-00007a04a2da 
-on database directory /home/h1254918/SR/NetBeansProjects/Project_Sailaway2.0/users with class loader sun.misc.Launcher$AppClassLoader@266474c2 
+Fri Nov 18 12:43:06 CET 2016:
+Booting Derby version The Apache Software Foundation - Apache Derby - 10.10.2.0 - (1582446): instance a816c00e-0158-773f-00e1-000029d051af 
+on database directory /home/h1258009/SR/NetBeansProjects/Project_Sailaway2.0/Project_Sailaway2.0/sun-appserv-samples with class loader sun.misc.Launcher$AppClassLoader@5e2de80c 
 Loaded from file:/opt/WR/netbeans/glassfish-4.1.1/javadb/lib/derby.jar
 java.vendor=Oracle Corporation
-java.runtime.version=1.8.0_111-b16
+java.runtime.version=1.8.0_102-b14
 user.dir=/opt/WR/netbeans/glassfish-4.1.1/javadb
 os.name=Linux
 os.arch=amd64
-os.version=4.7.9-200.fc24.x86_64
-derby.system.home=/home/h1254918/SR/NetBeansProjects/Project_Sailaway2.0
+os.version=4.7.6-200.fc24.x86_64
+derby.system.home=/home/h1258009/SR/NetBeansProjects/Project_Sailaway2.0/Project_Sailaway2.0
 Database Class Loader started - derby.database.classpath=''
-Mon Nov 14 18:00:03 CET 2016 Thread[DRDAConnThread_2,5,main] (XID = 780), (SESSIONID = 0), (DATABASE = users), (DRDAID = {1}), Cleanup action starting
-java.sql.SQLNonTransientConnectionException: Connection authentication failure occurred.  Reason: Invalid authentication..
+Fri Nov 18 12:43:16 CET 2016 Thread[DRDAConnThread_10,5,main] Cleanup action starting
+java.sql.SQLException: Database 'users' not found.
 	at org.apache.derby.impl.jdbc.SQLExceptionFactory40.getSQLException(Unknown Source)
 	at org.apache.derby.impl.jdbc.Util.newEmbedSQLException(Unknown Source)
 	at org.apache.derby.impl.jdbc.Util.newEmbedSQLException(Unknown Source)
 	at org.apache.derby.impl.jdbc.Util.generateCsSQLException(Unknown Source)
 	at org.apache.derby.impl.jdbc.EmbedConnection.newSQLException(Unknown Source)
-	at org.apache.derby.impl.jdbc.EmbedConnection.checkUserCredentials(Unknown Source)
+	at org.apache.derby.impl.jdbc.EmbedConnection.handleDBNotFound(Unknown Source)
 	at org.apache.derby.impl.jdbc.EmbedConnection.<init>(Unknown Source)
 	at org.apache.derby.impl.jdbc.EmbedConnection40.<init>(Unknown Source)
 	at org.apache.derby.jdbc.Driver40.getNewEmbedConnection(Unknown Source)
@@ -33,12 +33,12 @@ java.sql.SQLNonTransientConnectionException: Connection authentication failure o
 	at org.apache.derby.impl.drda.DRDAConnThread.parseDRDAConnection(Unknown Source)
 	at org.apache.derby.impl.drda.DRDAConnThread.processCommands(Unknown Source)
 	at org.apache.derby.impl.drda.DRDAConnThread.run(Unknown Source)
-Caused by: java.sql.SQLException: Connection authentication failure occurred.  Reason: Invalid authentication..
+Caused by: java.sql.SQLException: Database 'users' not found.
 	at org.apache.derby.impl.jdbc.SQLExceptionFactory.getSQLException(Unknown Source)
 	at org.apache.derby.impl.jdbc.SQLExceptionFactory40.wrapArgsForTransportAcrossDRDA(Unknown Source)
 	... 19 more
 ============= begin nested exception, level (1) ===========
-java.sql.SQLException: Connection authentication failure occurred.  Reason: Invalid authentication..
+java.sql.SQLException: Database 'users' not found.
 	at org.apache.derby.impl.jdbc.SQLExceptionFactory.getSQLException(Unknown Source)
 	at org.apache.derby.impl.jdbc.SQLExceptionFactory40.wrapArgsForTransportAcrossDRDA(Unknown Source)
 	at org.apache.derby.impl.jdbc.SQLExceptionFactory40.getSQLException(Unknown Source)
@@ -46,7 +46,7 @@ java.sql.SQLException: Connection authentication failure occurred.  Reason: Inva
 	at org.apache.derby.impl.jdbc.Util.newEmbedSQLException(Unknown Source)
 	at org.apache.derby.impl.jdbc.Util.generateCsSQLException(Unknown Source)
 	at org.apache.derby.impl.jdbc.EmbedConnection.newSQLException(Unknown Source)
-	at org.apache.derby.impl.jdbc.EmbedConnection.checkUserCredentials(Unknown Source)
+	at org.apache.derby.impl.jdbc.EmbedConnection.handleDBNotFound(Unknown Source)
 	at org.apache.derby.impl.jdbc.EmbedConnection.<init>(Unknown Source)
 	at org.apache.derby.impl.jdbc.EmbedConnection40.<init>(Unknown Source)
 	at org.apache.derby.jdbc.Driver40.getNewEmbedConnection(Unknown Source)
@@ -62,4 +62,60 @@ java.sql.SQLException: Connection authentication failure occurred.  Reason: Inva
 	at org.apache.derby.impl.drda.DRDAConnThread.run(Unknown Source)
 ============= end nested exception, level (1) ===========
 Cleanup action completed
-Mon Nov 14 18:00:03 CET 2016 Thread[DRDAConnThread_2,5,main] (DATABASE = users), (DRDAID = {1}), Connection authentication failure occurred.  Reason: Invalid authentication..
+Fri Nov 18 12:43:16 CET 2016 Thread[DRDAConnThread_10,5,main] (DATABASE = users), (DRDAID = {9}), Database 'users' not found.
+----------------------------------------------------------------
+Fri Nov 18 12:43:37 CET 2016:
+Shutting down instance a816c00e-0158-773f-00e1-000029d051af on database directory /home/h1258009/SR/NetBeansProjects/Project_Sailaway2.0/Project_Sailaway2.0/sun-appserv-samples with class loader sun.misc.Launcher$AppClassLoader@5e2de80c 
+Fri Nov 18 12:43:37 CET 2016 Thread[DRDAConnThread_10,5,main] (DATABASE = sun-appserv-samples), (DRDAID = {10}), Database 'sun-appserv-samples' shutdown.
+----------------------------------------------------------------
+Fri Nov 18 12:43:50 CET 2016:
+Booting Derby version The Apache Software Foundation - Apache Derby - 10.10.2.0 - (1582446): instance 8814411f-0158-773f-00e1-000029d051af 
+on database directory /home/h1258009/SR/NetBeansProjects/Project_Sailaway2.0/Project_Sailaway2.0/users with class loader sun.misc.Launcher$AppClassLoader@5e2de80c 
+Loaded from file:/opt/WR/netbeans/glassfish-4.1.1/javadb/lib/derby.jar
+java.vendor=Oracle Corporation
+java.runtime.version=1.8.0_102-b14
+user.dir=/opt/WR/netbeans/glassfish-4.1.1/javadb
+os.name=Linux
+os.arch=amd64
+os.version=4.7.6-200.fc24.x86_64
+derby.system.home=/home/h1258009/SR/NetBeansProjects/Project_Sailaway2.0/Project_Sailaway2.0
+Database Class Loader started - derby.database.classpath=''
+----------------------------------------------------------------
+Fri Nov 18 12:43:50 CET 2016:
+Shutting down instance 8814411f-0158-773f-00e1-000029d051af on database directory /home/h1258009/SR/NetBeansProjects/Project_Sailaway2.0/Project_Sailaway2.0/users with class loader sun.misc.Launcher$AppClassLoader@5e2de80c 
+Fri Nov 18 12:43:50 CET 2016 Thread[DRDAConnThread_11,5,main] (DATABASE = users), (DRDAID = {12}), Database 'users' shutdown.
+----------------------------------------------------------------
+Fri Nov 18 12:44:18 CET 2016:
+Booting Derby version The Apache Software Foundation - Apache Derby - 10.10.2.0 - (1582446): instance 7f9bc1bb-0158-773f-00e1-000029d051af 
+on database directory /home/h1258009/SR/NetBeansProjects/Project_Sailaway2.0/Project_Sailaway2.0/users with class loader sun.misc.Launcher$AppClassLoader@5e2de80c 
+Loaded from file:/opt/WR/netbeans/glassfish-4.1.1/javadb/lib/derby.jar
+java.vendor=Oracle Corporation
+java.runtime.version=1.8.0_102-b14
+user.dir=/opt/WR/netbeans/glassfish-4.1.1/javadb
+os.name=Linux
+os.arch=amd64
+os.version=4.7.6-200.fc24.x86_64
+derby.system.home=/home/h1258009/SR/NetBeansProjects/Project_Sailaway2.0/Project_Sailaway2.0
+Database Class Loader started - derby.database.classpath=''
+----------------------------------------------------------------
+Fri Nov 18 12:44:31 CET 2016:
+Booting Derby version The Apache Software Foundation - Apache Derby - 10.10.2.0 - (1582446): instance 539141e7-0158-773f-00e1-000029d051af 
+on database directory /home/h1258009/SR/NetBeansProjects/Project_Sailaway2.0/Project_Sailaway2.0/sun-appserv-samples with class loader sun.misc.Launcher$AppClassLoader@5e2de80c 
+Loaded from file:/opt/WR/netbeans/glassfish-4.1.1/javadb/lib/derby.jar
+java.vendor=Oracle Corporation
+java.runtime.version=1.8.0_102-b14
+user.dir=/opt/WR/netbeans/glassfish-4.1.1/javadb
+os.name=Linux
+os.arch=amd64
+os.version=4.7.6-200.fc24.x86_64
+derby.system.home=/home/h1258009/SR/NetBeansProjects/Project_Sailaway2.0/Project_Sailaway2.0
+Database Class Loader started - derby.database.classpath=''
+----------------------------------------------------------------
+Fri Nov 18 12:45:48 CET 2016: Shutting down Derby engine
+----------------------------------------------------------------
+Fri Nov 18 12:45:48 CET 2016:
+Shutting down instance 539141e7-0158-773f-00e1-000029d051af on database directory /home/h1258009/SR/NetBeansProjects/Project_Sailaway2.0/Project_Sailaway2.0/sun-appserv-samples with class loader sun.misc.Launcher$AppClassLoader@5e2de80c 
+----------------------------------------------------------------
+Fri Nov 18 12:45:48 CET 2016:
+Shutting down instance 7f9bc1bb-0158-773f-00e1-000029d051af on database directory /home/h1258009/SR/NetBeansProjects/Project_Sailaway2.0/Project_Sailaway2.0/users with class loader sun.misc.Launcher$AppClassLoader@5e2de80c 
+----------------------------------------------------------------

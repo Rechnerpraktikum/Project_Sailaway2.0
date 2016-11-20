@@ -1,0 +1,897 @@
+body {
+  background-color: rgb(255, 255, 255);
+  font: 400 1em/1.38 Lato;
+  color: rgb(0, 0, 0);
+}
+
+.crew {
+  display: block;
+  position: absolute;
+  top: 142px;
+  left: 53.328125%;
+  z-index: 20;
+  width: 6%;
+  height: 26px;
+  border-radius: 3px;
+  background-color: rgba(222, 222, 222, 0);
+  font-size: 1em;
+  text-align: center;
+  text-decoration: underline;
+  color: rgb(0, 39, 99);
+}
+
+.divfooter {
+  position: absolute;
+  top: 661px;
+  left: 10.0625%;
+  z-index: 1;
+  width: 79.9375%;
+  height: 138px;
+  background: url('../images/blue-ocean-wallpaper-2(2).jpg') rgb(165, 206, 236);
+  background-size: cover;
+  background-position: center bottom;
+}
+
+.divheader {
+  position: absolute;
+  top: -2px;
+  left: 10%;
+  width: 80%;
+  height: 121px;
+  background: url('../images/blue-ocean-wallpaper-2(2).jpg') rgb(166, 206, 236);
+  background-size: auto auto;
+  background-position: center top;
+  box-shadow: 0 2px 5px rgba(0, 0, 0, 0.19);
+}
+
+.hafen {
+  display: block;
+  position: absolute;
+  top: 142px;
+  left: 16.78125%;
+  z-index: 17;
+  width: 6%;
+  height: 26px;
+  border-radius: 3px;
+  background-color: rgba(222, 222, 222, 0);
+  font-size: 1em;
+  text-align: center;
+  text-decoration: underline;
+  color: rgb(0, 39, 99);
+}
+
+.karte {
+  display: block;
+  position: absolute;
+  top: 142px;
+  left: 10.03515625%;
+  z-index: 14;
+  width: 6.798828125%;
+  height: 26px;
+  border-radius: 3px;
+  background-color: rgba(222, 222, 222, 0);
+  font-size: 1em;
+  text-align: center;
+  text-decoration: underline;
+  color: rgb(0, 39, 99);
+}
+
+.karte:hover {
+  color: rgb(252, 253, 255);
+}
+
+.crew:active,
+.hafen:active,
+.karte:active,
+.log:active,
+.navigation:active,
+.radar:active,
+.wetter:active,
+.wind:active {
+  color: rgb(0, 19, 48);
+}
+
+.kartehafenwetterradarwind {
+  position: absolute;
+  top: 142px;
+  left: 10%;
+  z-index: 2;
+  width: 29.75%;
+  height: 499px;
+  background-color: rgb(207, 226, 245);
+}
+
+.log {
+  display: block;
+  position: absolute;
+  top: 142px;
+  left: 49.2822265625%;
+  z-index: 21;
+  width: 6%;
+  height: 26px;
+  border-radius: 3px;
+  background-color: rgba(222, 222, 222, 0);
+  font-size: 1em;
+  text-align: center;
+  text-decoration: underline;
+  color: rgb(0, 39, 99);
+}
+
+.logout {
+  display: block;
+  position: absolute;
+  top: 79px;
+  left: 80.3310546875%;
+  z-index: 26;
+  width: 8.416015625%;
+  height: 33px;
+  border-radius: 3px;
+  background-color: rgb(255, 255, 255);
+  box-shadow: 2px 1px 5px rgba(0, 0, 0, 0.3);
+  font-size: 1em;
+  text-align: center;
+  color: rgb(0, 39, 99);
+}
+
+.logout:hover {
+  background-color: rgb(222, 223, 222);
+  box-shadow: 2px 1px 5px rgba(0, 0, 0, 0.3);
+}
+
+.maschine {
+  position: absolute;
+  top: 393px;
+}
+
+.maschineon {
+  display: block;
+  position: absolute;
+  top: 397px;
+  left: 84.0283203125%;
+  z-index: 28;
+  width: 5.75%;
+  height: 20px;
+  border-radius: 3px;
+  background-color: rgb(255, 255, 255);
+  box-shadow: 2px 1px 5px rgba(0, 0, 0, 0.3);
+  font-size: 1em;
+  text-align: center;
+  color: rgb(0, 0, 0);
+}
+
+.maschinerpm {
+  position: absolute;
+  top: 460px;
+}
+
+.maschinetank {
+  position: absolute;
+  top: 425px;
+}
+
+.navigation {
+  display: block;
+  position: absolute;
+  top: 142px;
+  left: 41.166015625%;
+  z-index: 19;
+  width: 8.8330078125%;
+  height: 26px;
+  border-radius: 3px;
+  background-color: rgba(222, 222, 222, 0);
+  font-size: 1em;
+  text-align: center;
+  text-decoration: underline;
+  color: rgb(0, 39, 99);
+}
+
+.navilogcrew {
+  position: absolute;
+  top: 142px;
+  left: 41.16015625%;
+  z-index: 3;
+  width: 27%;
+  height: 300px;
+  background-color: rgb(207, 226, 245);
+}
+
+.pheader {
+  position: absolute;
+  top: 32px;
+  left: 10.080078125%;
+  z-index: 9;
+  width: 37.3330078125%;
+  min-height: 100px;
+  font-size: 1em;
+  font-weight: 100;
+  color: rgb(0, 0, 0);
+}
+
+.radar {
+  display: block;
+  position: absolute;
+  top: 142px;
+  left: 29.44921875%;
+  z-index: 18;
+  width: 6%;
+  height: 26px;
+  border-radius: 3px;
+  background-color: rgba(222, 222, 222, 0);
+  font-size: 1em;
+  text-align: center;
+  text-decoration: underline;
+  color: rgb(0, 39, 99);
+}
+
+.radio {
+  position: absolute;
+}
+
+.radiokanal {
+  position: absolute;
+  top: 547px;
+  left: 73.06640625%;
+  z-index: 22;
+  width: 4.5830078125%;
+  min-height: 36px;
+  font-family: Helvetica;
+  font-size: 1em;
+  color: rgb(0, 0, 0);
+}
+
+.radioonoff {
+  display: block;
+  position: absolute;
+  top: 521px;
+  left: 83.916015625%;
+  z-index: 27;
+  width: 5.75%;
+  height: 20px;
+  border-radius: 3px;
+  background-color: rgb(255, 255, 255);
+  box-shadow: 2px 1px 5px rgba(0, 0, 0, 0.3);
+  font-size: 1em;
+  text-align: center;
+  color: rgb(0, 0, 0);
+}
+
+.radiosprechen {
+  display: block;
+  position: absolute;
+  top: 580px;
+  left: 79.078125%;
+  z-index: 23;
+  width: 8.416015625%;
+  height: 33px;
+  border-radius: 3px;
+  background-color: rgb(255, 255, 255);
+  box-shadow: 2px 1px 5px rgba(0, 0, 0, 0.3);
+  font-size: 1em;
+  text-align: center;
+  color: rgb(0, 39, 99);
+}
+
+.maschineon:hover,
+.radioonoff:hover,
+.radiosprechen:hover {
+  background-color: rgb(165, 207, 239);
+  box-shadow: 2px 1px 5px rgba(0, 0, 0, 0.3);
+}
+
+.logout:active,
+.maschineon:active,
+.radioonoff:active,
+.radiosprechen:active {
+  background-color: rgb(78, 161, 224);
+  box-shadow: 2px 1px 5px rgba(0, 0, 0, 0.3);
+}
+
+.schiff {
+  position: absolute;
+}
+
+.segel {
+  position: absolute;
+  top: 460px;
+  left: 41.162109375%;
+}
+
+.segelbaum,
+.segelreff,
+.segelruder {
+  position: absolute;
+}
+
+.wetter {
+  display: block;
+  position: absolute;
+  top: 142px;
+  left: 23.19921875%;
+  z-index: 15;
+  width: 6%;
+  height: 26px;
+  border-radius: 3px;
+  background-color: rgba(222, 222, 222, 0);
+  font-size: 1em;
+  text-align: center;
+  text-decoration: underline;
+  color: rgb(0, 39, 99);
+}
+
+.crew:hover,
+.hafen:hover,
+.log:hover,
+.navigation:hover,
+.radar:hover,
+.wetter:hover,
+.wind:hover {
+  color: rgb(255, 255, 255);
+}
+
+.wind {
+  display: block;
+  position: absolute;
+  top: 142px;
+  left: 34.69921875%;
+  z-index: 16;
+  width: 6%;
+  height: 26px;
+  border-radius: 3px;
+  background-color: rgba(222, 222, 222, 0);
+  font-size: 1em;
+  text-align: center;
+  text-decoration: underline;
+  color: rgb(0, 39, 99);
+}
+
+.wrapper {
+  overflow: hidden;
+}
+
+._html {
+  position: absolute;
+  top: 174px;
+}
+
+.maschine-1 {
+  left: 69.5986328125%;
+  z-index: 12;
+  width: 10.732421875%;
+  min-height: 32px;
+  font-size: 1em;
+  color: rgb(0, 0, 0);
+}
+
+.maschine-2 {
+  left: 69.578125%;
+  z-index: 6;
+  width: 20.416015625%;
+  height: 109px;
+  background-color: rgb(207, 226, 245);
+}
+
+.maschinerpm-1 {
+  left: 69.5986328125%;
+  z-index: 39;
+  width: 7.421875%;
+  min-height: 26px;
+  font-size: 1em;
+  color: rgb(0, 0, 0);
+}
+
+.maschinetank-1 {
+  left: 69.572265625%;
+  z-index: 30;
+  width: 7.421875%;
+  min-height: 26px;
+  font-size: 1em;
+  color: rgb(0, 0, 0);
+}
+
+.radio-1 {
+  top: 520px;
+  left: 69.578125%;
+  z-index: 10;
+  width: 9.0048828125%;
+  min-height: 31px;
+  font-size: 1em;
+  color: rgb(0, 0, 0);
+}
+
+.radio-2 {
+  display: block;
+  top: 567px;
+  left: 72.982421875%;
+  z-index: 8;
+  width: 4.416015625%;
+  height: 53px;
+  padding-left: 10px;
+  border-radius: 3px;
+  background: url('../images/select-arrows.svg') rgb(255, 255, 255);
+  background-repeat: no-repeat;
+  background-size: auto auto;
+  background-position: right center;
+  box-shadow: 2px 1px 5px rgba(0, 0, 0, 0.3);
+  font-size: 1.25em;
+  font-weight: 100;
+  color: rgb(0, 39, 99);
+}
+
+.radio-2:hover {
+  background-color: rgb(165, 207, 239);
+  box-shadow: 2px 1px 5px rgba(0, 0, 0, 0.3);
+}
+
+.radio-2:active {
+  background-color: rgb(78, 161, 224);
+  box-shadow: 2px 1px 5px rgba(0, 0, 0, 0.3);
+}
+
+.radio-2:focus {
+  background-color: rgb(255, 255, 255);
+  box-shadow: 2px 1px 5px rgba(0, 0, 0, 0.3);
+  color: rgb(201, 222, 255);
+}
+
+.radio-3 {
+  top: 520px;
+  left: 69.5986328125%;
+  z-index: 7;
+  width: 20.416015625%;
+  height: 121px;
+  background-color: rgb(207, 226, 245);
+}
+
+.schiff-2 {
+  top: 142px;
+  left: 69.572265625%;
+  z-index: 13;
+  width: 9.5048828125%;
+  min-height: 32px;
+  font-size: 1em;
+  color: rgb(0, 0, 0);
+}
+
+.schiff-3 {
+  top: 142px;
+  left: 69.595703125%;
+  z-index: 5;
+  width: 20.416015625%;
+  height: 235px;
+  background-color: rgb(207, 226, 245);
+}
+
+.segel-1 {
+  z-index: 11;
+  width: 9.6337890625%;
+  min-height: 31px;
+  font-size: 1em;
+  color: rgb(0, 0, 0);
+}
+
+.segel-2 {
+  z-index: 4;
+  width: 27%;
+  height: 181px;
+  background-color: rgb(207, 226, 245);
+}
+
+.segelbaum-2 {
+  top: 545px;
+  left: 41.166015625%;
+  z-index: 33;
+  width: 9.6337890625%;
+  min-height: 31px;
+  font-size: 1em;
+  color: rgb(0, 0, 0);
+}
+
+.segelreff-2 {
+  top: 596px;
+  left: 41.16015625%;
+  z-index: 34;
+  width: 9.6337890625%;
+  min-height: 31px;
+  font-size: 1em;
+  color: rgb(0, 0, 0);
+}
+
+.segelruder-2 {
+  top: 491px;
+  left: 41.16015625%;
+  z-index: 32;
+  width: 9.6337890625%;
+  min-height: 31px;
+  font-size: 1em;
+  color: rgb(0, 0, 0);
+}
+
+.wrapper-1 {
+  left: 75.1923828125%;
+  z-index: 38;
+  width: 13.75%;
+  height: 26px;
+}
+
+.wrapper-2 {
+  top: 595px;
+  left: 46.58203125%;
+  z-index: 37;
+  width: 20.580078125%;
+  height: 35px;
+}
+
+.wrapper-3 {
+  top: 544px;
+  left: 46.58203125%;
+  z-index: 36;
+  width: 20.580078125%;
+  height: 35px;
+}
+
+.wrapper-4 {
+  top: 492px;
+  left: 46.58203125%;
+  z-index: 35;
+  width: 20.580078125%;
+  height: 35px;
+}
+
+.wrapper-5 {
+  top: 168px;
+  left: 70.4970703125%;
+  z-index: 31;
+  width: 18.416015625%;
+  height: 196px;
+}
+
+.wrapper-6 {
+  left: 75.166015625%;
+  z-index: 29;
+  width: 13.75%;
+  height: 26px;
+}
+
+.wrapper-7 {
+  left: 42.1484375%;
+  z-index: 25;
+  width: 25.0166015625%;
+  height: 258px;
+}
+
+.wrapper-8 {
+  left: 10.830078125%;
+  z-index: 24;
+  width: 28.166015625%;
+  height: 456px;
+}
+
+.maschinerpm span,
+.maschinetank span,
+.segelbaum span,
+.segelreff span,
+.segelruder span {
+  border-top-width: 0;
+  border-right-width: 0;
+  border-bottom-width: 0;
+  border-left-width: 0;
+  border-color: transparent;
+  border-style: none;
+  border-top-left-radius: 0;
+  border-top-right-radius: 0;
+  border-bottom-right-radius: 0;
+  border-bottom-left-radius: 0;
+  background-color: transparent;
+  font-family: inherit;
+  font-style: normal;
+  font-size: inherit;
+  font-weight: 300;
+  text-transform: inherit;
+  text-decoration: inherit;
+  letter-spacing: inherit;
+  word-spacing: inherit;
+  color: rgb(0, 39, 99);
+  opacity: 1;
+  word-break: normal;
+  word-wrap: normal;
+  white-space: normal;
+}
+
+.pheader span {
+  border-top-width: 0;
+  border-right-width: 0;
+  border-bottom-width: 0;
+  border-left-width: 0;
+  border-color: transparent;
+  border-style: none;
+  border-top-left-radius: 0;
+  border-top-right-radius: 0;
+  border-bottom-right-radius: 0;
+  border-bottom-left-radius: 0;
+  background-color: transparent;
+  font-family: inherit;
+  font-style: inherit;
+  font-size: 5em;
+  font-weight: inherit;
+  text-transform: inherit;
+  text-decoration: inherit;
+  letter-spacing: inherit;
+  word-spacing: inherit;
+  color: rgb(0, 39, 99);
+  opacity: 1;
+  word-break: normal;
+  word-wrap: normal;
+  white-space: normal;
+}
+
+.maschine span,
+.radio span,
+.schiff span,
+.segel span {
+  border-top-width: 0;
+  border-right-width: 0;
+  border-bottom-width: 0;
+  border-left-width: 0;
+  border-color: transparent;
+  border-style: none;
+  border-top-left-radius: 0;
+  border-top-right-radius: 0;
+  border-bottom-right-radius: 0;
+  border-bottom-left-radius: 0;
+  background-color: transparent;
+  font-family: inherit;
+  font-style: normal;
+  font-size: inherit;
+  font-weight: inherit;
+  text-transform: inherit;
+  text-decoration: inherit;
+  letter-spacing: inherit;
+  word-spacing: inherit;
+  color: rgb(0, 39, 99);
+  opacity: 1;
+  word-break: normal;
+  word-wrap: normal;
+  white-space: normal;
+}
+
+.radiokanal span {
+  border-top-width: 0;
+  border-right-width: 0;
+  border-bottom-width: 0;
+  border-left-width: 0;
+  border-color: transparent;
+  border-style: none;
+  border-top-left-radius: 0;
+  border-top-right-radius: 0;
+  border-bottom-right-radius: 0;
+  border-bottom-left-radius: 0;
+  background-color: transparent;
+  font-style: normal;
+  font-size: inherit;
+  font-weight: 300;
+  text-transform: inherit;
+  text-decoration: inherit;
+  letter-spacing: inherit;
+  word-spacing: inherit;
+  color: rgb(0, 39, 99);
+  opacity: 1;
+  word-break: normal;
+  word-wrap: normal;
+  white-space: normal;
+}
+
+@media(max-width: 1200px) {
+  .radioonoff {
+    top: 522px;
+    left: 83.1818181818%;
+    width: 6.5454545454%;
+  }
+}
+
+@media(max-width: 1100px) {
+  body {
+    font-size: 1em;
+  }
+
+  .radioonoff {
+    left: 80.3295454545%;
+    width: 9.3203883495%;
+  }
+}
+
+@media(max-width: 1030px) {
+  .crew {
+    left: 55.3655946601%;
+  }
+
+  .hafen {
+    left: 17.2117718446%;
+  }
+
+  .karte {
+    left: 9.6116504854%;
+    width: 8.1553398058%;
+  }
+
+  .log {
+    left: 50.9314320388%;
+  }
+
+  .navigation {
+    left: 41.1650485436%;
+    width: 11.2621359223%;
+  }
+
+  .radar {
+    left: 29.156553398%;
+  }
+
+  .radioonoff {
+    left: 80.2912621359%;
+  }
+
+  .radiosprechen {
+    left: 79.1262135922%;
+    width: 9.9029126213%;
+  }
+
+  .wetter {
+    left: 22.8155339805%;
+    width: 7.1844660194%;
+  }
+
+  .wind {
+    left: 34.5039441747%;
+  }
+}
+
+@media(max-width: 700px) {
+  body {
+    font-size: 1em;
+  }
+
+  .crew {
+    top: 168px;
+    left: 52.4107142857%;
+    width: 9.5714285714%;
+  }
+
+  .hafen {
+    left: 20.4285714285%;
+    width: 11.1428571428%;
+  }
+
+  .karte {
+    left: 9.3714285714%;
+    width: 13.4285714285%;
+  }
+
+  .log {
+    top: 168px;
+    left: 47.4107142857%;
+  }
+
+  .maschineon {
+    top: 393px;
+    left: 83.2%;
+  }
+
+  .navigation {
+    left: 45.3714285714%;
+    width: 17.4285714285%;
+  }
+
+  .radar {
+    top: 168px;
+    left: 14.7142857142%;
+    width: 10.4285714285%;
+  }
+
+  .radiokanal {
+    top: 556px;
+    left: 69.8839285714%;
+  }
+
+  .radioonoff {
+    left: 78.5714285714%;
+    width: 11%;
+  }
+
+  .radiosprechen {
+    top: 588px;
+    left: 76.4285714285%;
+    width: 13.2857142857%;
+  }
+
+  .wetter {
+    left: 29.6%;
+    width: 11.1428571428%;
+  }
+
+  .wind {
+    top: 168px;
+    left: 25.1428571428%;
+    width: 8.2857142857%;
+  }
+
+  .maschinerpm-1 {
+    top: 457px;
+    left: 69.5714285714%;
+  }
+
+  .maschinetank-1 {
+    top: 413px;
+    left: 69.5714285714%;
+    width: 9.5714285714%;
+  }
+
+  .radio-2 {
+    top: 576px;
+    left: 69.8571428571%;
+    width: 5.2857142857%;
+  }
+
+  .segelbaum-2 {
+    top: 522px;
+    left: 40.6986607142%;
+  }
+
+  .segelreff-2 {
+    top: 576px;
+    left: 41.1584821428%;
+  }
+
+  .segelruder-2 {
+    top: 476px;
+    left: 41.1584821428%;
+  }
+
+  .wrapper-1 {
+    top: 476px;
+    left: 72.4486607142%;
+  }
+
+  .wrapper-2 {
+    top: 602px;
+    left: 42.4285714285%;
+    width: 24.7142857142%;
+    height: 25px;
+  }
+
+  .wrapper-3 {
+    top: 551px;
+    left: 42.4285714285%;
+    width: 24.7142857142%;
+    height: 25px;
+  }
+
+  .wrapper-4 {
+    top: 502px;
+    left: 42.1428571428%;
+    width: 25%;
+    height: 25px;
+  }
+
+  .wrapper-6 {
+    top: 432px;
+    left: 72.4508928571%;
+  }
+
+  .wrapper-7 {
+    top: 194px;
+    left: 42.1428571428%;
+    width: 25%;
+    height: 238px;
+  }
+
+  .wrapper-8 {
+    top: 196px;
+    left: 10.8571428571%;
+    width: 28.1428571428%;
+    height: 434px;
+  }
+
+  .maschinetank span {
+    font-weight: 100;
+  }
+}

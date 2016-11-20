@@ -1,0 +1,42 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml"
+      xmlns:ui="http://xmlns.jcp.org/jsf/facelets"
+      xmlns:h="http://xmlns.jcp.org/jsf/html"
+      xmlns:f="http://xmlns.jcp.org/jsf/core">
+
+    <ui:composition template="/template.xhtml">
+        <ui:define name="title">
+            <h:outputText value="#{bundle.EditCrewmemberTitle}"></h:outputText>
+        </ui:define>
+        <ui:define name="body">
+            <h:panelGroup id="messagePanel" layout="block">
+                <h:messages errorStyle="color: red" infoStyle="color: blue" layout="table"/>
+            </h:panelGroup>
+            <h:form>
+                <h:panelGrid columns="2">
+                    <h:outputLabel value="#{bundle.EditCrewmemberLabel_crewmemberid}" for="crewmemberid" />
+                    <h:inputText id="crewmemberid" value="#{crewmemberController.selected.crewmemberid}" title="#{bundle.EditCrewmemberTitle_crewmemberid}" required="true" requiredMessage="#{bundle.EditCrewmemberRequiredMessage_crewmemberid}"/>
+                    <h:outputLabel value="#{bundle.EditCrewmemberLabel_vorname}" for="vorname" />
+                    <h:inputText id="vorname" value="#{crewmemberController.selected.vorname}" title="#{bundle.EditCrewmemberTitle_vorname}" required="true" requiredMessage="#{bundle.EditCrewmemberRequiredMessage_vorname}"/>
+                    <h:outputLabel value="#{bundle.EditCrewmemberLabel_nachname}" for="nachname" />
+                    <h:inputText id="nachname" value="#{crewmemberController.selected.nachname}" title="#{bundle.EditCrewmemberTitle_nachname}" required="true" requiredMessage="#{bundle.EditCrewmemberRequiredMessage_nachname}"/>
+                    <h:outputLabel value="#{bundle.EditCrewmemberLabel_rufzeichen}" for="rufzeichen" />
+                    <h:selectOneMenu id="rufzeichen" value="#{crewmemberController.selected.rufzeichen}" title="#{bundle.EditCrewmemberTitle_rufzeichen}" >
+                        <f:selectItems value="#{schiffController.itemsAvailableSelectOne}"/>
+                    </h:selectOneMenu>
+                </h:panelGrid>
+                <h:commandLink action="#{crewmemberController.update}" value="#{bundle.EditCrewmemberSaveLink}"/>
+                <br />
+                <br />
+                <h:link outcome="View" value="#{bundle.EditCrewmemberViewLink}"/>
+                <br />
+                <h:commandLink action="#{crewmemberController.prepareList}" value="#{bundle.EditCrewmemberShowAllLink}" immediate="true"/>
+                <br />
+                <br />
+                <h:link outcome="/index" value="#{bundle.EditCrewmemberIndexLink}" />
+            </h:form>
+        </ui:define>
+    </ui:composition>
+
+</html>

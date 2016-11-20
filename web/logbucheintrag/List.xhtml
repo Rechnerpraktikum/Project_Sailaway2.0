@@ -1,0 +1,76 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml"
+      xmlns:ui="http://xmlns.jcp.org/jsf/facelets"
+      xmlns:h="http://xmlns.jcp.org/jsf/html"
+      xmlns:f="http://xmlns.jcp.org/jsf/core">
+
+    <ui:composition template="/template.xhtml">
+        <ui:define name="title">
+            <h:outputText value="#{bundle.ListLogbucheintragTitle}"></h:outputText>
+        </ui:define>
+        <ui:define name="body">
+            <h:form styleClass="jsfcrud_list_form">
+                <h:panelGroup id="messagePanel" layout="block">
+                    <h:messages errorStyle="color: red" infoStyle="color: green" layout="table"/>
+                </h:panelGroup>
+                <h:outputText escape="false" value="#{bundle.ListLogbucheintragEmpty}" rendered="#{logbucheintragController.items.rowCount == 0}"/>
+                <h:panelGroup rendered="#{logbucheintragController.items.rowCount > 0}">
+                    <h:outputText value="#{logbucheintragController.pagination.pageFirstItem + 1}..#{logbucheintragController.pagination.pageLastItem + 1}/#{logbucheintragController.pagination.itemsCount}"/>&nbsp;
+                    <h:commandLink action="#{logbucheintragController.previous}" value="#{bundle.Previous} #{logbucheintragController.pagination.pageSize}" rendered="#{logbucheintragController.pagination.hasPreviousPage}"/>&nbsp;
+                    <h:commandLink action="#{logbucheintragController.next}" value="#{bundle.Next} #{logbucheintragController.pagination.pageSize}" rendered="#{logbucheintragController.pagination.hasNextPage}"/>&nbsp;
+                    <h:dataTable value="#{logbucheintragController.items}" var="item" border="0" cellpadding="2" cellspacing="0" rowClasses="jsfcrud_odd_row,jsfcrud_even_row" rules="all" style="border:solid 1px">
+                        <h:column>
+                            <f:facet name="header">
+                                <h:outputText value="#{bundle.ListLogbucheintragTitle_eintragnummer}"/>
+                            </f:facet>
+                            <h:outputText value="#{item.eintragnummer}"/>
+                        </h:column>
+                        <h:column>
+                            <f:facet name="header">
+                                <h:outputText value="#{bundle.ListLogbucheintragTitle_zeit}"/>
+                            </f:facet>
+                            <h:outputText value="#{item.zeit}">
+                                <f:convertDateTime pattern="HH:mm:ss" />
+                            </h:outputText>
+                        </h:column>
+                        <h:column>
+                            <f:facet name="header">
+                                <h:outputText value="#{bundle.ListLogbucheintragTitle_longtitude}"/>
+                            </f:facet>
+                            <h:outputText value="#{item.longtitude}"/>
+                        </h:column>
+                        <h:column>
+                            <f:facet name="header">
+                                <h:outputText value="#{bundle.ListLogbucheintragTitle_latitude}"/>
+                            </f:facet>
+                            <h:outputText value="#{item.latitude}"/>
+                        </h:column>
+                        <h:column>
+                            <f:facet name="header">
+                                <h:outputText value="#{bundle.ListLogbucheintragTitle_rufzeichen}"/>
+                            </f:facet>
+                            <h:outputText value="#{item.rufzeichen}"/>
+                        </h:column>
+                        <h:column>
+                            <f:facet name="header">
+                                <h:outputText value="&nbsp;"/>
+                            </f:facet>
+                            <h:commandLink action="#{logbucheintragController.prepareView}" value="#{bundle.ListLogbucheintragViewLink}"/>
+                            <h:outputText value=" "/>
+                            <h:commandLink action="#{logbucheintragController.prepareEdit}" value="#{bundle.ListLogbucheintragEditLink}"/>
+                            <h:outputText value=" "/>
+                            <h:commandLink action="#{logbucheintragController.destroy}" value="#{bundle.ListLogbucheintragDestroyLink}"/>
+                        </h:column>
+                    </h:dataTable>
+                </h:panelGroup>
+                <br />
+                <h:commandLink action="#{logbucheintragController.prepareCreate}" value="#{bundle.ListLogbucheintragCreateLink}"/>
+                <br />
+                <br />
+                <h:link outcome="/index" value="#{bundle.ListLogbucheintragIndexLink}"/>
+            </h:form>
+        </ui:define>
+    </ui:composition>
+
+</html>
