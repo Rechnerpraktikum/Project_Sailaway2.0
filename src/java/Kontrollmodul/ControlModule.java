@@ -5,11 +5,15 @@
  */
 package Kontrollmodul;
 
+import entityclasses.Schiff;
 import javax.annotation.PostConstruct;
 import java.io.Serializable;
 import java.util.ArrayList;
 import java.util.List;
 import javax.faces.bean.ManagedBean;
+import javax.faces.bean.SessionScoped;
+import javax.faces.context.FacesContext;
+import javax.faces.event.ActionEvent;
 import org.primefaces.model.chart.MeterGaugeChartModel;
 
 /**
@@ -18,15 +22,32 @@ import org.primefaces.model.chart.MeterGaugeChartModel;
  */
 
 @ManagedBean
+@SessionScoped
 public class ControlModule implements Serializable{
     
     private int rl;   
     private int bam;   
     private int sfr;   
-    private int rpm;   
+    private int rpm;
+    private int sprit;   
     private boolean eon;
     private MeterGaugeChartModel fuelGaugeModel;
- 
+    private Schiff schiff;
+    
+    /*
+     * Constructor wird erstellt
+     * Wenn die Simulation mit einem Request den Constructor aufruft, 
+     * werden darin enthaltene Werte zurueckgeliefert.
+     */ 
+    public ControlModule() {
+        FacesContext context = FacesContext.getCurrentInstance();
+        schiff = (Schiff)context.getExternalContext().getSessionMap().get("schiff");
+    }
+    
+    /*
+     * Getter und Setter von privaten Variablen setzen,
+     * damit diese oeffentlich zugaenglich sind.
+     */
     public int getRl() {
         return rl;
     }
@@ -58,7 +79,11 @@ public class ControlModule implements Serializable{
     public void setRpm(int rpm) {
         this.rpm = rpm;
     }
- 
+    
+    public int getSprit() {
+        return sprit;
+    }
+    
     public boolean isEon() {
         return eon;
     }
@@ -67,7 +92,14 @@ public class ControlModule implements Serializable{
         this.eon = eon;
     }
     
+    /*
+     * Tankanzeige wird ab hier aufgebaut
+     */
     @PostConstruct
+    /*
+     * init() wird automatisch ausgefuehrt, wenn der Brower geoeffnet wird.
+     * mit @PostConstruct wird sichergestellt, dass Meter Parameter zuerst geladen werden.
+     */
     public void init() {
         createMeterGaugeModel();
     }
@@ -84,7 +116,7 @@ public class ControlModule implements Serializable{
             add(300);
         }};
         
-        return new MeterGaugeChartModel (0, intervals); // 0 muss ersetzt werden durch Wert aus der Simulation
+        return new MeterGaugeChartModel (sprit, intervals); // Sprit --> Alternativloesungen
     }
     
     private void createMeterGaugeModel() {
@@ -98,9 +130,27 @@ public class ControlModule implements Serializable{
         fuelGaugeModel.setIntervalOuterRadius(100);
     }
     
+    
     /*
-     * Methode fuer if eon == true, Zeiger des Tankmeters updaten, entnommen aus Schiff Simulation
-     * Methode fuer if eon == ture, Veraenderungen der Steuerungselementen an Schiff Simulation weitergeben
-     * evtl. EventListener? Komplex
+    Action Listener fuer Tankzeiger
+    public void powerOn(ActionEvent actionEvent){
+        this.eon = true;
+        this.pointer = this.sprit;
+    }
+    
+    public void powerOff(ActionEvent actionEvent){
+        this.eon = false;
+        this.pointer = 0;
+    }
+
+    Event Listener fuer Tankzeiger
+    Event Listener (){
+        if (eon == true){
+            Contructor aufrufen fuer aktuellen Sprit Wert;
+        }
+        else{
+            this.sprit == 0;
+        }
+    }
      */
 }
