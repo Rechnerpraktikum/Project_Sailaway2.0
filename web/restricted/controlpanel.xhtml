@@ -32,7 +32,7 @@
         <h:panelGrid columns="1" style="margin-bottom: 10px">
             <h:outputText id="outputrpm" value="RPM: #{controlModule.rpm} U/Min" />
             <h:inputHidden id="rpm" value="#{controlModule.rpm}" />
-            <p:slider for="rpm" display="outputrpm" maxValue="2000" style="width: 200px" displayTemplate="RPM: {value} U/Min" />
+            <p:slider for="rpm" display="outputrpm" maxValue="4000" minValue="-4000" style="width: 200px" displayTemplate="RPM: {value} U/Min" />
         </h:panelGrid>
  
         <h3>Maschine Ein/Aus</h3>
