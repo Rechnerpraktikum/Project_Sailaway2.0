@@ -4,23 +4,23 @@ public class Wetter {
     private int zufall;
     
     private VektorRechner Rechner = new VektorRechner();
-    private Zyklon Zyklon1 = new Zyklon(48.1,15,110,5,850);
-    private Zyklon Zyklon2 = new Zyklon(48.1,15,110,12,850);
-    private Zyklon Zyklon3 = new Zyklon(48.1,15,100,8,850);
-    private Zyklon Zyklon4 = new Zyklon(55,15,90,20,850);
-    private Zyklon Zyklon5 = new Zyklon(55.6,14,120,10,850);
+    private Zyklon Zyklon1 = new Zyklon();
+    private Zyklon Zyklon2 = new Zyklon();
+    private Zyklon Zyklon3 = new Zyklon();
+    private Zyklon Zyklon4 = new Zyklon();
+    private Zyklon Zyklon5 = new Zyklon();
     
        
     public Wetter() {
         zufall = (int) ((Math.random()*3)+3);
-        System.out.println("Es gibt: " + zufall + " Zyklone");
+        
         
     }
 
 
     public double getLuftdruck(double n, double o, Zyklon thisZyklon, double zeit) {
-        double nb = Math.abs((thisZyklon.getNoerdlicheBreite(zeit) - n) * 111.2);
-        double oel = Math.abs((thisZyklon.getOestlicheLaenge(zeit) - o) * 96);
+        double nb = Math.abs((thisZyklon.getNoerdlicheBreite(zeit) - n) * 111);
+        double oel = Math.abs((thisZyklon.getOestlicheLaenge(zeit) - o) * 111);
         double entfernung = Math.sqrt(Math.abs(Math.pow(nb, 2) + Math.pow(oel, 2))); 
         
         if (thisZyklon.getNoerdlicheBreite(zeit) - n == 0 ) {
@@ -30,7 +30,7 @@ public class Wetter {
             entfernung = nb;
         }
         
-        double luftdruck = entfernung / 1.82 + thisZyklon.getTiefe(); 
+        double luftdruck = entfernung / 1.85 + thisZyklon.getTiefe(); 
         if ( luftdruck > 1013) {
             luftdruck = 1013;
         }
@@ -39,8 +39,8 @@ public class Wetter {
     }
     
     public double getLuftdruck(double n, double o, Zyklon thisZyklon) {
-        double nb = Math.abs((thisZyklon.getNoerdlicheBreite() - n) * 111.2);
-        double oel = Math.abs((thisZyklon.getOestlicheLaenge() - o) * 96);
+        double nb = Math.abs((thisZyklon.getNoerdlicheBreite() - n) * 111);
+        double oel = Math.abs((thisZyklon.getOestlicheLaenge() - o) * 111);
         double entfernung = Math.sqrt(Math.abs(Math.pow(nb, 2) + Math.pow(oel, 2))); 
         
         if (thisZyklon.getNoerdlicheBreite() - n == 0 ) {
@@ -50,7 +50,7 @@ public class Wetter {
             entfernung = nb;
         }
         
-        double luftdruck = entfernung / 1.82 + thisZyklon.getTiefe(); 
+        double luftdruck = entfernung / 1.85 + thisZyklon.getTiefe(); 
         if ( luftdruck > 1013) {
             luftdruck = 1013;
         }
@@ -66,7 +66,7 @@ public class Wetter {
                 c = 0;
             }
         double windrichtung = Math.toDegrees(Math.atan((c)));
-        System.out.println("Windrichtung: "+windrichtung +" b: "+ thisZyklon.getNoerdlicheBreite(zeit));
+        
       
         if ( n > thisZyklon.getNoerdlicheBreite(zeit) && o >= thisZyklon.getOestlicheLaenge(zeit) ) {
             windrichtung = windrichtung + 270;
@@ -76,7 +76,7 @@ public class Wetter {
             windrichtung = windrichtung + 90;
         }
         
-        System.out.println("Windrichtung: "+windrichtung);
+        
         return windrichtung;
     
     }
@@ -91,7 +91,7 @@ public class Wetter {
                 c = 0;
             }
         double windrichtung = Math.toDegrees(Math.atan((c)));
-        System.out.println("Windrichtung: "+windrichtung +" b: "+ thisZyklon.getNoerdlicheBreite());
+        
       
         if ( n > thisZyklon.getNoerdlicheBreite() && o >= thisZyklon.getOestlicheLaenge() ) {
             windrichtung = windrichtung + 270;
@@ -101,7 +101,7 @@ public class Wetter {
             windrichtung = windrichtung + 90;
         }
         
-        System.out.println("Windrichtung: "+windrichtung);
+        
         return windrichtung;
     }
     
@@ -116,12 +116,13 @@ public class Wetter {
     public double getWindstaerke(double n, double o, Zyklon thisZyklon) {
         
         double windstaerke = 0.14 *(1013 - getLuftdruck(n, o, thisZyklon));
-        System.out.println("Windstärke: "+windstaerke);        
+               
                                                                                 // Ausgabe in Km/h
         return windstaerke;
     }
     
-    public void getWind(double n, double o) {
+    public double[] getWind(double n, double o) {
+        double[] wetterAusgabe = new double[2];
         Vektor Wind1 = Rechner.getWinkelToVektor(getWindrichtung(n,o,Zyklon1),getWindstaerke(n,o,Zyklon1));
         Vektor Wind2 = Rechner.getWinkelToVektor(getWindrichtung(n,o,Zyklon2),getWindstaerke(n,o,Zyklon2));
         Vektor Wind3 = Rechner.getWinkelToVektor(getWindrichtung(n,o,Zyklon3),getWindstaerke(n,o,Zyklon3));
@@ -164,13 +165,18 @@ public class Wetter {
         } else if (WindAusgabe.getX() == 0 && WindAusgabe.getY() > 0) { 
             richtung = 360;
         }    
-        System.out.println("Richtung: " +richtung+ " Laenge: " +laenge);
-        System.out.println(WindAusgabe.getX() +" " + WindAusgabe.getY() +" "+Rechner.getVektorToRichtung(WindAusgabe));
         
+        
+        
+        wetterAusgabe[0] = richtung;
+        wetterAusgabe[1] = laenge;
+        
+        return wetterAusgabe;
         
     }
     
-    public void getWind(double n, double o, double zeit) {
+    public double[] getWind(double n, double o, double zeit) {
+        double[] wetterAusgabe = new double[2];
         Vektor Wind1 = Rechner.getWinkelToVektor(getWindrichtung(n,o,Zyklon1,zeit),getWindstaerke(n,o,Zyklon1,zeit));
         Vektor Wind2 = Rechner.getWinkelToVektor(getWindrichtung(n,o,Zyklon2,zeit),getWindstaerke(n,o,Zyklon2,zeit));
         Vektor Wind3 = Rechner.getWinkelToVektor(getWindrichtung(n,o,Zyklon3,zeit),getWindstaerke(n,o,Zyklon3,zeit));
@@ -213,10 +219,12 @@ public class Wetter {
         } else if (WindAusgabe.getX() == 0 && WindAusgabe.getY() > 0) { 
             richtung = 360;
         }    
-        System.out.println("Richtung: " +richtung+ " Laenge: " +laenge);
         
         
+        wetterAusgabe[0] = richtung;
+        wetterAusgabe[1] = laenge;
         
+        return wetterAusgabe;
     }
     
 }

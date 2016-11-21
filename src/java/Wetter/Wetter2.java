@@ -8,7 +8,8 @@ public class Wetter2 {
         
         Wetter Test = new Wetter();
         
-        Test.getWind(48,15);
+        double[] t = Test.getWind(48,1,5);
+        System.out.println(t[0] +" "+ t[1]);
     }
 }
     

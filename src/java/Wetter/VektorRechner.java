@@ -1,7 +1,6 @@
 package Wetter;
 
 
-
 class VektorRechner {
     private double winkelAlpha;
     private double winkelBeta;
@@ -18,7 +17,7 @@ class VektorRechner {
             winkelAlpha = Math.abs(richtung - 270);
         }
         winkelBeta = 90 - winkelAlpha;
-        System.out.println(winkelAlpha +" "+ winkelBeta);
+        
         x = Math.sin(Math.toRadians(winkelBeta))*laenge;
         y = Math.sin(Math.toRadians(winkelAlpha))*laenge;
     
