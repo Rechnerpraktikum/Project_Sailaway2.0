@@ -41,7 +41,7 @@ public class ControlModule implements Serializable{
      */ 
     public ControlModule() {
         FacesContext context = FacesContext.getCurrentInstance();
-        schiff = (Schiff)context.getExternalContext().getSessionMap().get("schiff");
+        schiff = (Schiff) context.getExternalContext().getSessionMap().get("schiff");
     }
     
     /*
@@ -135,21 +135,22 @@ public class ControlModule implements Serializable{
     Action Listener fuer Tankzeiger
     public void powerOn(ActionEvent actionEvent){
         this.eon = true;
-        this.pointer = this.sprit;
+        this.sprit = Constructor fuer Tankstelle aus der Simulation
     }
     
     public void powerOff(ActionEvent actionEvent){
         this.eon = false;
-        this.pointer = 0;
+        this.spirit = 0;
     }
 
     Event Listener fuer Tankzeiger
-    Event Listener (){
+    Event Listener 
+    public void test(){
         if (eon == true){
-            Contructor aufrufen fuer aktuellen Sprit Wert;
+            this.sprit = 100;
         }
         else{
-            this.sprit == 0;
+            this.sprit = 0;
         }
     }
      */
